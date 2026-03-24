@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Nepal Center for Autism Excellence — Empowering every child's unique potential in Kathmandu, Nepal." />
+    <title>Nepal Center for Autism Excellence</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Nunito (accessible, friendly, rounded) + Lora (warm headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Nunito:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ═══════════════════════════════════════════
+       CSS CUSTOM PROPERTIES — Light & Dark themes
+       ═══════════════════════════════════════════ */
+        :root {
+            --bg-page: #f0f7f4;
+            --bg-surface: #ffffff;
+            --bg-hero: #ddeef6;
+            --bg-about: #e8f5e9;
+            --bg-programs: #f5f0fb;
+            --bg-footer: #2e4a3e;
+
+            --text-primary: #1a2e26;
+            --text-secondary: #3d5a50;
+            --text-muted: #6b8c80;
+            --text-on-dark: #e8f4ee;
+
+            --accent-teal: #2a9d8f;
+            --accent-blue: #4a90c4;
+            --accent-green: #52b788;
+
+            --card-mint: #d8f3e3;
+            --card-sky: #d1ecf8;
+            --card-lavender: #e8e0f5;
+            --card-peach: #fde8d8;
+
+            --border-light: #c8ddd5;
+            --shadow-soft: 0 4px 20px rgba(42, 157, 143, 0.10);
+            --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.07);
+
+            --radius-card: 16px;
+            --font-heading: 'Lora', Georgia, serif;
+            --font-body: 'Nunito', 'Segoe UI', sans-serif;
+        }
+
+        [data-theme="dark"] {
+            --bg-page: #141f1c;
+            --bg-surface: #1e2e29;
+            --bg-hero: #1a2c38;
+            --bg-about: #182418;
+            --bg-programs: #1e1a2e;
+            --bg-footer: #0d1a14;
+
+            --text-primary: #e4f0eb;
+            --text-secondary: #b0cfc4;
+            --text-muted: #7fa899;
+            --text-on-dark: #d0ece0;
+
+            --accent-teal: #4fd1c5;
+            --accent-blue: #76b9e8;
+            --accent-green: #6fcf97;
+
+            --card-mint: #1a3328;
+            --card-sky: #162433;
+            --card-lavender: #231a33;
+            --card-peach: #332218;
+
+            --border-light: #2e4a3e;
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ═══════════════════════════════════════════
+       BASE
+       ═══════════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: background-color 0.3s, color 0.3s;
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-heading);
+            line-height: 1.3;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-teal);
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--accent-teal);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ═══════════════════════════════════════════
+       SKIP LINK (accessibility)
+       ═══════════════════════════════════════════ */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 1rem;
+            background: var(--accent-teal);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 0 0 8px 8px;
+            font-weight: 700;
+            z-index: 9999;
+            transition: top 0.2s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ═══════════════════════════════════════════
+       HEADER / NAV
+       ═══════════════════════════════════════════ */
+        .site-header {
+            background: var(--bg-surface);
+            border-bottom: 2px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-mark {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+
+        .logo-emblem {
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .logo-sub {
+            font-family: var(--font-body);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            display: block;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.4rem 0.75rem;
+            border-radius: 8px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            background: var(--bg-hero);
+            color: var(--accent-teal);
+        }
+
+        #theme-toggle {
+            background: var(--bg-about);
+            border: 1.5px solid var(--border-light);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: var(--font-body);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+
+        #theme-toggle:hover {
+            background: var(--border-light);
+        }
+
+        /* ═══════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════ */
+        #hero {
+            background: var(--bg-hero);
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle decorative blobs — CSS only, no animation */
+        #hero::before,
+        #hero::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.18;
+            pointer-events: none;
+        }
+
+        #hero::before {
+            width: 500px;
+            height: 500px;
+            background: var(--accent-teal);
+            top: -180px;
+            right: -120px;
+        }
+
+        #hero::after {
+            width: 350px;
+            height: 350px;
+            background: var(--accent-blue);
+            bottom: -150px;
+            left: -80px;
+        }
+
+        .hero-inner {
+            max-width: 740px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent-green);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+        }
+
+        #hero-title {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            margin: 0 0 1rem;
+            color: var(--text-primary);
+        }
+
+        #hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent-teal);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 0.7rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            transition: opacity 0.15s, transform 0.15s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-teal);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 0.7rem 1.6rem;
+            border-radius: 10px;
+            text-decoration: none;
+            border: 2px solid var(--accent-teal);
+            display: inline-block;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-teal);
+            color: #fff;
+        }
+
+        /* ═══════════════════════════════════════════
+       STATS BAR
+       ═══════════════════════════════════════════ */
+        .stats-bar {
+            background: var(--accent-teal);
+            padding: 2rem 1.5rem;
+        }
+
+        #stats-row {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .stat-value {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.82);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        /* ═══════════════════════════════════════════
+       SECTION COMMONS
+       ═══════════════════════════════════════════ */
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4.5rem 1.5rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-teal);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-heading {
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            margin: 0 0 1.5rem;
+        }
+
+        /* ═══════════════════════════════════════════
+       ABOUT SECTION
+       ═══════════════════════════════════════════ */
+        #about {
+            background: var(--bg-about);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 700px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mission-block {
+            background: var(--bg-surface);
+            border-left: 4px solid var(--accent-teal);
+            border-radius: 0 12px 12px 0;
+            padding: 1.5rem 1.75rem;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .mission-block p {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Founder Card */
+        .founder-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-card);
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            border: 1.5px solid var(--border-light);
+        }
+
+        .founder-img-wrap {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-teal);
+            margin-bottom: 1rem;
+            background: var(--bg-hero);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        #founder-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .founder-name {
+            font-size: 1.15rem;
+            margin: 0 0 0.1rem;
+        }
+
+        .founder-title-tag {
+            font-size: 0.82rem;
+            color: var(--accent-teal);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .founder-bio {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 1rem 0;
+        }
+
+        #founder-credentials {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        #founder-credentials li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        #founder-credentials li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        /* ═══════════════════════════════════════════
+       PROGRAMS SECTION
+       ═══════════════════════════════════════════ */
+        #programs {
+            background: var(--bg-programs);
+        }
+
+        #programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .program-card {
+            border-radius: var(--radius-card);
+            padding: 1.75rem 1.5rem;
+            box-shadow: var(--shadow-card);
+            border: 1.5px solid transparent;
+            transition: transform 0.18s, box-shadow 0.18s;
+        }
+
+        .program-card:hover,
+        .program-card:focus-within {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+        }
+
+        .program-card--mint {
+            background: var(--card-mint);
+            border-color: #a8d8bb;
+        }
+
+        .program-card--sky {
+            background: var(--card-sky);
+            border-color: #9dcde8;
+        }
+
+        .program-card--lavender {
+            background: var(--card-lavender);
+            border-color: #bca8e0;
+        }
+
+        .program-card--peach {
+            background: var(--card-peach);
+            border-color: #f0b89a;
+        }
+
+        .program-icon {
+            font-size: 2rem;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+
+        .program-age {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .program-title {
+            font-size: 1.05rem;
+            margin: 0 0 0.6rem;
+        }
+
+        .program-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ═══════════════════════════════════════════
+       CONTACT SECTION
+       ═══════════════════════════════════════════ */
+        #contact {
+            background: var(--bg-page);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 700px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Form */
+        .contact-form-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-card);
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            border: 1.5px solid var(--border-light);
+        }
+
+        .contact-form-card h3 {
+            font-size: 1.1rem;
+            margin: 0 0 1.25rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            padding: 0.6rem 0.85rem;
+            border: 1.5px solid var(--border-light);
+            border-radius: 8px;
+            background: var(--bg-page);
+            color: var(--text-primary);
+            transition: border-color 0.15s;
+            outline: none;
+            width: 100%;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.18);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25d366;
+            color: #fff;
+            font-weight: 700;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            padding: 0.7rem 1.4rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
+            transition: opacity 0.15s, transform 0.15s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-whatsapp:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .form-feedback {
+            margin-top: 0.75rem;
+            padding: 0.6rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .form-feedback--success {
+            background: #d8f3e3;
+            color: #1a6b3c;
+        }
+
+        .form-feedback--error {
+            background: #fde8d8;
+            color: #8b3a1a;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        /* Info panel */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            font-size: 1.3rem;
+            width: 36px;
+            flex-shrink: 0;
+            padding-top: 0.05rem;
+        }
+
+        .info-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+        }
+
+        .info-value {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        /* Map */
+        .map-wrapper {
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            border: 2px solid var(--border-light);
+            margin-top: 1.5rem;
+            height: 220px;
+            background: var(--bg-hero);
+        }
+
+        #map-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ */
+        footer {
+            background: var(--bg-footer);
+            color: var(--text-on-dark);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .footer-name {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 0 0 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .footer-links a {
+            color: var(--text-on-dark);
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: #a8e6cf;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            opacity: 0.55;
+            margin: 0.5rem 0 0;
+        }
+
+        /* ═══════════════════════════════════════════
+       FLOATING WHATSAPP BUTTON
+       ═══════════════════════════════════════════ */
+        #wa-float {
+            position: fixed;
+            bottom: 1.75rem;
+            right: 1.75rem;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25d366;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.88rem;
+            font-family: var(--font-body);
+            padding: 0.7rem 1.1rem 0.7rem 0.9rem;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        #wa-float:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.55);
+            color: #fff;
+        }
+
+        .wa-icon {
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 460px) {
+            #wa-float span.wa-label {
+                display: none;
+            }
+
+            #wa-float {
+                padding: 0.8rem;
+                border-radius: 50%;
+            }
+        }
+
+        /* ═══════════════════════════════════════════
+       RESPONSIVE TWEAKS
+       ═══════════════════════════════════════════ */
+        @media (max-width: 600px) {
+            .section-inner {
+                padding: 3rem 1rem;
+            }
+
+            #hero {
+                padding: 3.5rem 1rem 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Skip to main content (keyboard accessibility) -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ════════════════════════════════════════════
+       HEADER
+       ════════════════════════════════════════════ -->
+    <header class="site-header" role="banner">
+        <div class="header-inner">
+            <a href="#hero" class="logo-mark" aria-label="Nepal Center for Autism Excellence — home">
+                <div class="logo-emblem" aria-hidden="true">🌸</div>
+                <div>
+                    <span class="logo-text" id="school-name">Nepal Center for Autism Excellence</span>
+                    <span class="logo-sub">Kathmandu, Nepal</span>
+                </div>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#programs">Programs</a>
+                <a href="#contact">Contact</a>
+                <button id="theme-toggle" aria-pressed="false">🌙 Dark Mode</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ════════════════════════════════════════════
+       MAIN CONTENT
+       ════════════════════════════════════════════ -->
+    <main id="main">
+
+        <!-- HERO -->
+        <section id="hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <span class="hero-badge" aria-hidden="true">🇳🇵 Serving Nepal since 2010</span>
+                <h1 id="hero-title">Empowering Every Child's Unique Potential</h1>
+                <p id="hero-subtitle">A structured, joyful, and evidence-based learning environment for children on the
+                    autism spectrum — right here in Nepal.</p>
+                <div class="hero-cta-group">
+                    <a href="#programs" class="btn-primary">Explore Programs</a>
+                    <a href="#contact" class="btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS BAR -->
+        <div class="stats-bar" aria-label="School statistics">
+            <div id="stats-row" role="list">
+                <!-- Populated by JS -->
+                <div class="stat-item" role="listitem">
+                    <span class="stat-value">120+</span>
+                    <span class="stat-label">Families Served</span>
+                </div>
+                <div class="stat-item" role="listitem">
+                    <span class="stat-value">15</span>
+                    <span class="stat-label">Years of Service</span>
+                </div>
+                <div class="stat-item" role="listitem">
+                    <span class="stat-value">28</span>
+                    <span class="stat-label">Specialist Staff</span>
+                </div>
+                <div class="stat-item" role="listitem">
+                    <span class="stat-value">4</span>
+                    <span class="stat-label">Core Programs</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT -->
+        <section id="about" aria-labelledby="about-heading">
+            <div class="section-inner">
+                <div class="about-grid">
+                    <!-- Left: Story + Mission -->
+                    <div>
+                        <span class="section-label">Who We Are</span>
+                        <h2 class="section-heading" id="about-heading">Our Story</h2>
+                        <p id="about-body" style="color: var(--text-secondary);">
+                            Founded in 2010, Nepal Center for Autism Excellence began with a simple but powerful belief:
+                            that every child, regardless of how their mind works, deserves a chance to learn, connect,
+                            and grow.
+                        </p>
+                        <div class="mission-block" role="blockquote">
+                            <p id="mission-text">To provide a structured, supportive environment for children on the
+                                autism spectrum in Nepal, where every learner is seen, celebrated, and given the tools
+                                to thrive on their own terms.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Founder Card -->
+                    <div>
+                        <article class="founder-card" aria-label="About our founder">
+                            <div class="founder-img-wrap" aria-hidden="true">
+                                <img id="founder-img" src="" alt="" />
+                                <!-- Fallback emoji shown via CSS if img fails to load -->
+                            </div>
+                            <h3 class="founder-name" id="founder-name">Dr. Arati Sharma</h3>
+                            <p class="founder-title-tag" id="founder-title">Founder &amp; Executive Director</p>
+                            <p class="founder-bio" id="founder-bio">
+                                Dedicated to neuro-inclusive education for over 15 years.
+                            </p>
+                            <ul id="founder-credentials" aria-label="Qualifications">
+                                <!-- Populated by JS -->
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRAMS -->
+        <section id="programs" aria-labelledby="programs-heading">
+            <div class="section-inner">
+                <span class="section-label">What We Offer</span>
+                <h2 class="section-heading" id="programs-heading">Our Programs</h2>
+                <div id="programs-grid" role="list" aria-label="School programs">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" aria-labelledby="contact-heading">
+            <div class="section-inner">
+                <span class="section-label">Reach Out</span>
+                <h2 class="section-heading" id="contact-heading">Get In Touch</h2>
+
+                <div class="contact-grid">
+                    <!-- Contact Form -->
+                    <div class="contact-form-card">
+                        <h3>Send us a message via WhatsApp</h3>
+                        <form id="contact-form" novalidate aria-label="Contact form">
+                            <div class="form-group">
+                                <label for="form-name">Your Name <span aria-hidden="true">*</span></label>
+                                <input type="text" id="form-name" name="name" placeholder="e.g. Ram Sharma" required
+                                    autocomplete="name" aria-required="true" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-topic">Topic</label>
+                                <select id="form-topic" name="topic">
+                                    <option>Admission Inquiry</option>
+                                    <option>Program Details</option>
+                                    <option>Therapy Services</option>
+                                    <option>Volunteer / Donation</option>
+                                    <option>General Question</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-inquiry">Your Message <span aria-hidden="true">*</span></label>
+                                <textarea id="form-inquiry" name="inquiry" placeholder="Please tell us how we can help…"
+                                    required aria-required="true"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-whatsapp">
+                                <!-- WhatsApp SVG icon -->
+                                <svg class="wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16.004 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.338.618 4.612 1.793 6.61L2.667 29.333l6.88-1.765A13.283 13.283 0 0 0 16.004 29.333C23.36 29.333 29.333 23.36 29.333 16S23.36 2.667 16.004 2.667zm0 2.333c5.898 0 10.663 4.765 10.663 10.667 0 5.898-4.765 10.666-10.663 10.666a10.62 10.62 0 0 1-5.484-1.522l-.394-.24-4.085 1.048 1.083-3.95-.261-.41A10.617 10.617 0 0 1 5.337 16C5.337 10.098 10.102 5 16.004 5zm-3.27 5.333c-.207 0-.543.078-.828.39-.284.312-1.083 1.057-1.083 2.578s1.11 2.99 1.265 3.197c.156.207 2.168 3.458 5.33 4.71 2.617 1.044 3.162.888 3.73.834.568-.054 1.832-.75 2.09-1.474.259-.724.259-1.345.181-1.474-.078-.13-.285-.208-.595-.364-.31-.156-1.832-.904-2.116-1.008-.284-.104-.49-.156-.697.156-.207.31-.8 1.008-.98 1.215-.18.207-.362.233-.671.078-.31-.156-1.308-.482-2.49-1.537-.92-.82-1.54-1.833-1.72-2.142-.181-.31-.019-.477.135-.63.14-.138.31-.362.465-.542.156-.182.208-.31.31-.518.104-.207.052-.39-.026-.545-.078-.156-.686-1.681-.95-2.298-.25-.597-.507-.516-.697-.526a12.65 12.65 0 0 0-.597-.013z" />
+                                </svg>
+                                <span>Send via WhatsApp</span>
+                            </button>
+
+                            <div id="form-feedback" class="form-feedback" role="status" aria-live="polite" hidden></div>
+                        </form>
+                    </div>
+
+                    <!-- Info + Map -->
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">📍</span>
+                            <div>
+                                <div class="info-label">Address</div>
+                                <div class="info-value" id="school-address">Lazimpat, Kathmandu, Nepal</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">✉️</span>
+                            <div>
+                                <div class="info-label">Email</div>
+                                <div class="info-value">
+                                    <a id="footer-email-link"
+                                        href="mailto:info@autismschool.edu.np">info@autismschool.edu.np</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">💬</span>
+                            <div>
+                                <div class="info-label">WhatsApp</div>
+                                <div class="info-value">
+                                    <a class="wa-link" href="#" style="color: #25d366; font-weight:700;">Open WhatsApp
+                                        Chat</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon" aria-hidden="true">📘</span>
+                            <div>
+                                <div class="info-label">Facebook</div>
+                                <div class="info-value">
+                                    <a id="footer-fb-link" href="https://facebook.com/yourpage" target="_blank"
+                                        rel="noopener noreferrer">Follow us on Facebook</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map -->
+                        <div class="map-wrapper" aria-label="Map showing school location">
+                            <iframe id="map-frame" title="School location on Google Maps" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" src="" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════ -->
+    <footer role="contentinfo">
+        <div class="footer-inner">
+            <p class="footer-name" id="school-name-footer">Nepal Center for Autism Excellence</p>
+            <p style="font-size:0.88rem; opacity:0.7; margin:0.25rem 0 0;">Empowering every child's unique potential</p>
+            <div class="footer-links" aria-label="Footer navigation">
+                <a href="#about">About</a>
+                <a href="#programs">Programs</a>
+                <a href="#contact">Contact</a>
+                <a id="footer-fb-link-2" href="https://facebook.com/yourpage" target="_blank"
+                    rel="noopener noreferrer">Facebook</a>
+                <a class="wa-link" href="#">WhatsApp</a>
+            </div>
+            <p class="footer-copy">
+                &copy; <span id="footer-year"></span> Nepal Center for Autism Excellence. Built with ❤️ for
+                neuro-inclusive Nepal.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ════════════════════════════════════════════
+       FLOATING WHATSAPP BUTTON
+       ════════════════════════════════════════════ -->
+    <a id="wa-float" href="#" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+        <svg class="wa-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M16.004 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.338.618 4.612 1.793 6.61L2.667 29.333l6.88-1.765A13.283 13.283 0 0 0 16.004 29.333C23.36 29.333 29.333 23.36 29.333 16S23.36 2.667 16.004 2.667zm0 2.333c5.898 0 10.663 4.765 10.663 10.667 0 5.898-4.765 10.666-10.663 10.666a10.62 10.62 0 0 1-5.484-1.522l-.394-.24-4.085 1.048 1.083-3.95-.261-.41A10.617 10.617 0 0 1 5.337 16C5.337 10.098 10.102 5 16.004 5zm-3.27 5.333c-.207 0-.543.078-.828.39-.284.312-1.083 1.057-1.083 2.578s1.11 2.99 1.265 3.197c.156.207 2.168 3.458 5.33 4.71 2.617 1.044 3.162.888 3.73.834.568-.054 1.832-.75 2.09-1.474.259-.724.259-1.345.181-1.474-.078-.13-.285-.208-.595-.364-.31-.156-1.832-.904-2.116-1.008-.284-.104-.49-.156-.697.156-.207.31-.8 1.008-.98 1.215-.18.207-.362.233-.671.078-.31-.156-1.308-.482-2.49-1.537-.92-.82-1.54-1.833-1.72-2.142-.181-.31-.019-.477.135-.63.14-.138.31-.362.465-.542.156-.182.208-.31.31-.518.104-.207.052-.39-.026-.545-.078-.156-.686-1.681-.95-2.298-.25-.597-.507-.516-.697-.526a12.65 12.65 0 0 0-.597-.013z" />
+        </svg>
+        <span class="wa-label">Chat with us</span>
+    </a>
+
+    <script>
+        // Set footer year immediately (no need to wait for data)
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

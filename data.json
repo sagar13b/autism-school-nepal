@@ -1,0 +1,84 @@
+{
+    "school_info": {
+        "name": "Nepal Center for Autism Excellence",
+        "tagline": "Where Every Mind Belongs",
+        "location": "Butwal, Lumbini, Nepal",
+        "whatsapp_number": "9779847157110",
+        "facebook_page": "https://facebook.com/yourpage",
+        "email": "info@autismschool.edu.np",
+        "address": "Address galli, Butwal, Lumbini, Nepal",
+        "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.9804019706654!2d85.31659!3d27.71741!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190d2a5e7a6f%3A0x1a1c4f0e2e1a3b5c!2sLazimpat%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp"
+    },
+    "founder": {
+        "name": "Sagar",
+        "title": "Founder & Executive Director",
+        "bio": "Sagar has dedicated over 15 years to advancing neuro-inclusive education across Nepal. After completing her doctorate in Special Education from Tribhuvan University and postdoctoral research in behavioral therapy in India, she returned to Nepal with a singular mission: to ensure that every child on the autism spectrum has access to dignified, evidence-based, and compassionate education. She founded NCAE in 2010 with just five students and three dedicated teachers. Today, the center serves over 120 families.",
+        "image_url": "assets/founder.jpg",
+        "credentials": [
+            "Ph.D. Special Education, TU",
+            "Certified BCBA Supervisor",
+            "UNESCO Inclusive Education Fellow"
+        ]
+    },
+    "content": {
+        "hero_title": "Empowering Every Child's Unique Potential",
+        "hero_subtitle": "A structured, joyful, and evidence-based learning environment for children on the autism spectrum — right here in Nepal.",
+        "mission": "To provide a structured, supportive environment for children on the autism spectrum in Nepal, where every learner is seen, celebrated, and given the tools to thrive on their own terms.",
+        "about_heading": "Our Story",
+        "about_body": "Founded in 2010, Nepal Center for Autism Excellence began with a simple but powerful belief: that every child, regardless of how their mind works, deserves a chance to learn, connect, and grow. We combine Applied Behavior Analysis (ABA), speech-language therapy, occupational therapy, and inclusive arts to build a whole-child curriculum rooted in Nepali culture and values.",
+        "programs_heading": "Our Programs",
+        "contact_heading": "Get In Touch"
+    },
+    "programs": [
+        {
+            "id": "early",
+            "icon": "🌱",
+            "title": "Early Intervention",
+            "age_range": "Ages 2–6",
+            "description": "Intensive, play-based therapy sessions designed to support communication, social skills, and daily routines during the critical developmental window.",
+            "color": "mint"
+        },
+        {
+            "id": "school",
+            "icon": "📚",
+            "title": "School Readiness",
+            "age_range": "Ages 5–10",
+            "description": "Bridging the gap between therapy and mainstream schooling through structured academic readiness, peer interaction, and self-regulation skills.",
+            "color": "sky"
+        },
+        {
+            "id": "life",
+            "icon": "🏡",
+            "title": "Life Skills",
+            "age_range": "Ages 10–18",
+            "description": "Practical independence training covering personal hygiene, community navigation, vocational exploration, and social communication for adolescents.",
+            "color": "lavender"
+        },
+        {
+            "id": "family",
+            "icon": "🤝",
+            "title": "Family Support",
+            "age_range": "All Ages",
+            "description": "Workshops, counseling, and a parent network to equip families with strategies, respite resources, and a community that truly understands.",
+            "color": "peach"
+        }
+    ],
+    "stats": [
+        {
+            "value": "120+",
+            "label": "Families Served"
+        },
+        {
+            "value": "15",
+            "label": "Years of Service"
+        },
+        {
+            "value": "28",
+            "label": "Specialist Staff"
+        },
+        {
+            "value": "4",
+            "label": "Core Programs"
+        }
+    ]
+}
