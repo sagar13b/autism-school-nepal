@@ -70,6 +70,69 @@ function renderCredentials(credentials) {
   list.innerHTML = credentials.map((c) => `<li>${c}</li>`).join("");
 }
 
+// ── Render Testimonials ────────────────────────────────────
+function renderTestimonials(testimonials) {
+  const grid = document.getElementById("testimonials-grid");
+  if (!grid) return;
+
+  if (!testimonials || testimonials.length === 0) {
+    grid.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1/-1;">No testimonials available yet.</p>';
+    return;
+  }
+
+  grid.innerHTML = testimonials
+    .map(
+      (t) => `
+    <div class="testimonial-card" role="article">
+      <div class="testimonial-quote-icon" aria-hidden="true">"</div>
+      <p class="testimonial-text">${t.quote}</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar" aria-hidden="true">${t.avatar || "👤"}</div>
+        <div class="testimonial-author-info">
+          <h4>${t.name}</h4>
+          <p class="testimonial-author-role">${t.role}</p>
+        </div>
+      </div>
+    </div>
+  `,
+    )
+    .join("");
+}
+
+// ── Render Gallery ─────────────────────────────────────────
+function renderGallery(gallery) {
+  const grid = document.getElementById("gallery-grid");
+  if (!grid) return;
+
+  if (!gallery || gallery.length === 0) {
+    grid.innerHTML = `
+      <div class="gallery-item">
+        <div class="gallery-placeholder" aria-label="No photos available">📸</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder" aria-label="No photos available">🖼️</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder" aria-label="No photos available">🎨</div>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = gallery
+    .map(
+      (img) => `
+    <div class="gallery-item" role="listitem">
+      <img src="${img.url}" alt="${img.alt}" loading="lazy" />
+      <div class="gallery-item-overlay">
+        <p class="gallery-item-caption">${img.caption}</p>
+      </div>
+    </div>
+  `,
+    )
+    .join("");
+}
+
 // ── Contact form → WhatsApp ────────────────────────────────
 function initContactForm(waNumber) {
   const form = document.getElementById("contact-form");
@@ -177,16 +240,18 @@ async function init() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
-    const { school_info: si, founder, content, programs, stats } = data;
+    const { school_info: si, founder, content, programs, stats, testimonials, gallery } = data;
 
     // ── School meta
     setText("school-name", si.name);
     setText("school-name-footer", si.name);
+    setText("school-location", si.location);
     setText("school-tagline", si.tagline);
     setText("school-address", si.address);
     setText("school-email", si.email);
     setHref("footer-email-link", `mailto:${si.email}`);
     setHref("footer-fb-link", si.facebook_page);
+    setHref("footer-fb-link-2", si.facebook_page);
     document.title = si.name;
 
     // ── Hero
@@ -215,6 +280,14 @@ async function init() {
 
     // ── Stats
     renderStats(stats);
+
+    // ── Testimonials
+    setText("testimonials-heading", content.testimonials_heading || "Testimonials");
+    renderTestimonials(testimonials);
+
+    // ── Gallery
+    setText("gallery-heading", content.gallery_heading || "Photo Gallery");
+    renderGallery(gallery);
 
     // ── Contact
     setText("contact-heading", content.contact_heading);

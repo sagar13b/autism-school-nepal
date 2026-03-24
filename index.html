@@ -4,9 +4,48 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Autism Care Center Rupandehi - Compassionate Care for Every Child" />
     <meta name="description"
-        content="Nepal Center for Autism Excellence — Empowering every child's unique potential in Kathmandu, Nepal." />
-    <title>Nepal Center for Autism Excellence</title>
+        content="Autism Care Center Rupandehi provides specialized therapy, education, and family support for children on the autism spectrum in Butwal, Rupandehi, Nepal. Expert care with compassion." />
+    <meta name="keywords" content="autism, special education, Nepal, autism school, autism therapy, ABA therapy, special needs education, neuro-inclusive, Butwal, Lumbini, autism support" />
+    <meta name="author" content="Nepal Center for Autism Excellence" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com/" />
+    <meta property="og:title" content="Autism Care Center Rupandehi - Compassionate Care for Every Child" />
+    <meta property="og:description"
+        content="Providing specialized therapy, education, and family support for children with autism in Butwal, Rupandehi, Nepal." />
+    <meta property="og:image" content="https://yourwebsite.com/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Autism Care Center Rupandehi" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://yourwebsite.com/" />
+    <meta name="twitter:title" content="Autism Care Center Rupandehi - Compassionate Care for Every Child" />
+    <meta name="twitter:description"
+        content="Providing specialized therapy, education, and family support for children with autism in Butwal, Rupandehi, Nepal." />
+    <meta name="twitter:image" content="https://yourwebsite.com/assets/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2a9d8f" />
+    <meta name="msapplication-TileColor" content="#2a9d8f" />
+
+    <title>Autism Care Center Rupandehi - Butwal, Nepal</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -611,6 +650,151 @@
         }
 
         /* ═══════════════════════════════════════════
+       TESTIMONIALS SECTION
+       ═══════════════════════════════════════════ */
+        #testimonials {
+            background: var(--bg-page);
+        }
+
+        #testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-card);
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+            border: 1.5px solid var(--border-light);
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .testimonial-quote-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 3rem;
+            color: var(--accent-teal);
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0 0 1.5rem;
+            position: relative;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .testimonial-author-info h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .testimonial-author-role {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* ═══════════════════════════════════════════
+       GALLERY SECTION
+       ═══════════════════════════════════════════ */
+        #gallery {
+            background: var(--bg-about);
+        }
+
+        #gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            background: var(--bg-hero);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item-caption {
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .gallery-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-muted);
+            opacity: 0.3;
+        }
+
+        /* ═══════════════════════════════════════════
        CONTACT SECTION
        ═══════════════════════════════════════════ */
         #contact {
@@ -900,17 +1084,19 @@
        ════════════════════════════════════════════ -->
     <header class="site-header" role="banner">
         <div class="header-inner">
-            <a href="#hero" class="logo-mark" aria-label="Nepal Center for Autism Excellence — home">
+            <a href="#hero" class="logo-mark" aria-label="Autism Care Center Rupandehi — home">
                 <div class="logo-emblem" aria-hidden="true">🌸</div>
                 <div>
-                    <span class="logo-text" id="school-name">Nepal Center for Autism Excellence</span>
-                    <span class="logo-sub">Kathmandu, Nepal</span>
+                    <span class="logo-text" id="school-name">Autism Care Center Rupandehi</span>
+                    <span class="logo-sub" id="school-location">Butwal, Nepal</span>
                 </div>
             </a>
 
             <nav aria-label="Main navigation">
                 <a href="#about">About</a>
                 <a href="#programs">Programs</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
                 <button id="theme-toggle" aria-pressed="false">🌙 Dark Mode</button>
             </nav>
@@ -925,10 +1111,10 @@
         <!-- HERO -->
         <section id="hero" aria-labelledby="hero-title">
             <div class="hero-inner">
-                <span class="hero-badge" aria-hidden="true">🇳🇵 Serving Nepal since 2010</span>
-                <h1 id="hero-title">Empowering Every Child's Unique Potential</h1>
-                <p id="hero-subtitle">A structured, joyful, and evidence-based learning environment for children on the
-                    autism spectrum — right here in Nepal.</p>
+                <span class="hero-badge" aria-hidden="true">🇳🇵 Serving Rupandehi with Care</span>
+                <h1 id="hero-title">Compassionate Care for Children with Autism</h1>
+                <p id="hero-subtitle">Providing specialized therapy, education, and family support for children on the
+                    autism spectrum in Butwal, Nepal.</p>
                 <div class="hero-cta-group">
                     <a href="#programs" class="btn-primary">Explore Programs</a>
                     <a href="#contact" class="btn-secondary">Contact Us</a>
@@ -968,14 +1154,10 @@
                         <span class="section-label">Who We Are</span>
                         <h2 class="section-heading" id="about-heading">Our Story</h2>
                         <p id="about-body" style="color: var(--text-secondary);">
-                            Founded in 2010, Nepal Center for Autism Excellence began with a simple but powerful belief:
-                            that every child, regardless of how their mind works, deserves a chance to learn, connect,
-                            and grow.
+                            Autism Care Center Rupandehi was established to address the critical need for specialized autism services in the Butwal region.
                         </p>
                         <div class="mission-block" role="blockquote">
-                            <p id="mission-text">To provide a structured, supportive environment for children on the
-                                autism spectrum in Nepal, where every learner is seen, celebrated, and given the tools
-                                to thrive on their own terms.</p>
+                            <p id="mission-text">To provide comprehensive, compassionate care and evidence-based therapies for children with autism in Nepal, ensuring every child has access to the support they need to reach their full potential.</p>
                         </div>
                     </div>
 
@@ -986,10 +1168,10 @@
                                 <img id="founder-img" src="" alt="" />
                                 <!-- Fallback emoji shown via CSS if img fails to load -->
                             </div>
-                            <h3 class="founder-name" id="founder-name">Dr. Arati Sharma</h3>
-                            <p class="founder-title-tag" id="founder-title">Founder &amp; Executive Director</p>
+                            <h3 class="founder-name" id="founder-name">Narayani Kunwar</h3>
+                            <p class="founder-title-tag" id="founder-title">Founder &amp; Director</p>
                             <p class="founder-bio" id="founder-bio">
-                                Dedicated to neuro-inclusive education for over 15 years.
+                                Dedicated advocate for children with autism in Nepal.
                             </p>
                             <ul id="founder-credentials" aria-label="Qualifications">
                                 <!-- Populated by JS -->
@@ -1006,6 +1188,28 @@
                 <span class="section-label">What We Offer</span>
                 <h2 class="section-heading" id="programs-heading">Our Programs</h2>
                 <div id="programs-grid" role="list" aria-label="School programs">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials" aria-labelledby="testimonials-heading">
+            <div class="section-inner">
+                <span class="section-label">What Families Say</span>
+                <h2 class="section-heading" id="testimonials-heading">Testimonials</h2>
+                <div id="testimonials-grid" role="list" aria-label="Family testimonials">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery" aria-labelledby="gallery-heading">
+            <div class="section-inner">
+                <span class="section-label">Our Spaces</span>
+                <h2 class="section-heading" id="gallery-heading">Photo Gallery</h2>
+                <div id="gallery-grid" role="list" aria-label="School photo gallery">
                     <!-- Populated by JS -->
                 </div>
             </div>
@@ -1065,7 +1269,7 @@
                             <span class="info-icon" aria-hidden="true">📍</span>
                             <div>
                                 <div class="info-label">Address</div>
-                                <div class="info-value" id="school-address">Lazimpat, Kathmandu, Nepal</div>
+                                <div class="info-value" id="school-address">Butwal, Rupandehi, Nepal</div>
                             </div>
                         </div>
                         <div class="info-item">
@@ -1074,7 +1278,7 @@
                                 <div class="info-label">Email</div>
                                 <div class="info-value">
                                     <a id="footer-email-link"
-                                        href="mailto:info@autismschool.edu.np">info@autismschool.edu.np</a>
+                                        href="mailto:info@autismcarerupandehi.org.np">info@autismcarerupandehi.org.np</a>
                                 </div>
                             </div>
                         </div>
@@ -1116,19 +1320,21 @@
        ════════════════════════════════════════════ -->
     <footer role="contentinfo">
         <div class="footer-inner">
-            <p class="footer-name" id="school-name-footer">Nepal Center for Autism Excellence</p>
-            <p style="font-size:0.88rem; opacity:0.7; margin:0.25rem 0 0;">Empowering every child's unique potential</p>
+            <p class="footer-name" id="school-name-footer">Autism Care Center Rupandehi</p>
+            <p style="font-size:0.88rem; opacity:0.7; margin:0.25rem 0 0;">Compassionate care for every child</p>
             <div class="footer-links" aria-label="Footer navigation">
                 <a href="#about">About</a>
                 <a href="#programs">Programs</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
                 <a id="footer-fb-link-2" href="https://facebook.com/yourpage" target="_blank"
                     rel="noopener noreferrer">Facebook</a>
                 <a class="wa-link" href="#">WhatsApp</a>
             </div>
             <p class="footer-copy">
-                &copy; <span id="footer-year"></span> Nepal Center for Autism Excellence. Built with ❤️ for
-                neuro-inclusive Nepal.
+                &copy; <span id="footer-year"></span> Autism Care Center Rupandehi Pvt. Ltd. Built with ❤️ for
+                children and families in Nepal.
             </p>
         </div>
     </footer>

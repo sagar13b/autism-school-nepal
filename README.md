@@ -16,8 +16,12 @@ This website showcases the programs, mission, and impact of the Nepal Center for
 - **Dynamic Content** - Data-driven architecture using JSON for easy content updates
 - **WhatsApp Integration** - Direct contact functionality via WhatsApp for inquiries
 - **Interactive Programs Showcase** - Four core programs with detailed descriptions
-- **Founder Profile** - Highlighting Dr. Arati Sharma's credentials and mission
+- **Founder Profile** - Highlighting the founder's credentials and mission
+- **Testimonials Section** - Display family testimonials and success stories
+- **Photo Gallery** - Showcase facilities, classrooms, and activities
 - **Google Maps Integration** - Interactive location map
+- **SEO Optimized** - Comprehensive meta tags including Open Graph and Twitter Cards
+- **Custom 404 Page** - User-friendly error page
 - **Performance Optimized** - Fast loading, minimal dependencies, Tailwind CSS via CDN
 
 ## Project Structure
@@ -25,10 +29,25 @@ This website showcases the programs, mission, and impact of the Nepal Center for
 ```
 autism-school-nepal/
 ├── index.html          # Main website HTML
+├── 404.html            # Custom error page
 ├── script.js           # JavaScript functionality and data loading
-├── data.json           # Website content and school information (to be created)
-├── assets/             # Images and media files (to be created)
-│   └── founder.jpg
+├── data.json           # Website content and school information
+├── .gitignore          # Git ignore file (protects sensitive data)
+├── assets/             # Images and media files
+│   ├── README.md       # Assets folder documentation
+│   ├── favicon.ico     # Website favicon
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── apple-touch-icon.png
+│   ├── og-image.jpg    # Open Graph image for social sharing
+│   ├── founder.jpg     # Founder photo
+│   └── gallery/        # Gallery images folder
+│       ├── classroom-1.jpg
+│       ├── therapy-session.jpg
+│       ├── outdoor-play.jpg
+│       ├── art-class.jpg
+│       ├── library.jpg
+│       └── family-workshop.jpg
 └── README.md           # This file
 ```
 
@@ -46,9 +65,9 @@ autism-school-nepal/
    cd autism-school-nepal
    ```
 
-2. **Create the data.json file**
+2. **Update the data.json file**
 
-   The website loads content from a `data.json` file. Create this file in the root directory with the following structure:
+   The website loads content from a `data.json` file. This file is already created but contains placeholder data. Update it with your actual information:
 
    ```json
    {
@@ -89,10 +108,30 @@ autism-school-nepal/
 
 3. **Add media assets**
 
-   Create an `assets/` folder and add:
-   - `founder.jpg` - Photo of the founder
+   Add the following images to the `assets/` folder:
+   - `founder.jpg` - Photo of the founder (400x400px recommended)
+   - `og-image.jpg` - Social media sharing image (1200x630px)
+   - Favicon files (generate from https://realfavicongenerator.net/)
 
-4. **Launch the website**
+   Add gallery images to `assets/gallery/`:
+   - Classroom photos
+   - Therapy session photos
+   - Facility images
+   - Activity photos
+
+   **Important:** Ensure you have proper consent before using photos of children.
+
+4. **Update configuration**
+
+   Replace placeholder data in `data.json`:
+   - WhatsApp number (already updated: 9779847157110)
+   - Facebook page URL
+   - Complete street address
+   - Verify location matches Google Maps embed
+   - Update testimonials with real feedback
+   - Update founder information as needed
+
+5. **Launch the website**
 
    **Option A: Simple file open**
    - Open `index.html` directly in your browser
@@ -139,12 +178,87 @@ Update the `whatsapp_number` field in `data.json` with your actual WhatsApp Busi
 1. Get your embed URL from [Google Maps](https://www.google.com/maps)
 2. Update `map_embed_url` in `data.json`
 
-## Programs Offered
+## Website Sections
 
+### 1. Hero Section
+- Eye-catching headline and subtitle
+- Call-to-action buttons
+- Decorative background elements
+
+### 2. Statistics Bar
+- Families served
+- Years of service
+- Specialist staff count
+- Core programs count
+
+### 3. About Section
+- School story and mission
+- Founder profile with credentials
+- Professional biography
+
+### 4. Programs Section
+Four core programs:
 1. **Early Intervention** (Ages 2-6) - Play-based therapy for communication and social skills
 2. **School Readiness** (Ages 5-10) - Academic readiness and peer interaction
 3. **Life Skills** (Ages 10-18) - Independence training and vocational exploration
 4. **Family Support** (All Ages) - Parent workshops and community resources
+
+### 5. Testimonials Section
+- Family success stories
+- Parent feedback and quotes
+- Configurable via data.json
+
+### 6. Photo Gallery
+- Classroom and facility images
+- Activity photos
+- Therapy session visuals
+- Hover effects with captions
+
+### 7. Contact Section
+- WhatsApp contact form
+- Email and address information
+- Facebook page link
+- Interactive Google Maps embed
+
+### 8. Footer
+- Site navigation
+- Social media links
+- Copyright information
+
+## Advanced Features
+
+### SEO Optimization
+- Comprehensive meta tags
+- Open Graph protocol for Facebook sharing
+- Twitter Card support
+- Proper heading hierarchy
+- Semantic HTML structure
+- Descriptive alt text for all images
+- Keywords and description optimization
+
+### Custom 404 Error Page
+- User-friendly error message
+- Navigation back to home
+- Quick links to main sections
+- Consistent branding
+
+### Data Privacy
+- `.gitignore` file protects sensitive data.json from being committed
+- WhatsApp integration for privacy-conscious communication
+- No external tracking scripts
+- Minimal data collection
+
+### Gallery System
+- Lazy loading images for performance
+- Responsive image grid
+- Hover effects with captions
+- Placeholder support for missing images
+
+### Testimonials System
+- Dynamic rendering from JSON
+- Avatar support (emoji or images)
+- Flexible quote formatting
+- Responsive card layout
 
 ## Accessibility Features
 
@@ -153,9 +267,10 @@ Update the `whatsapp_number` field in `data.json` with your actual WhatsApp Busi
 - Skip to main content link
 - Keyboard navigation support
 - Focus indicators
-- Alt text for images
+- Alt text for all images
 - Color contrast compliance (WCAG AA)
 - Responsive text sizing
+- Screen reader friendly
 
 ## Browser Support
 
@@ -167,11 +282,45 @@ Update the `whatsapp_number` field in `data.json` with your actual WhatsApp Busi
 
 ## Technologies Used
 
-- HTML5
-- CSS3 (Custom Properties, Flexbox, Grid)
-- Vanilla JavaScript (ES6+)
-- Tailwind CSS (via CDN)
-- Google Fonts
+- **HTML5** - Semantic markup
+- **CSS3** - Custom properties, Flexbox, Grid
+- **Vanilla JavaScript (ES6+)** - No framework dependencies
+- **Tailwind CSS** (via CDN) - Utility-first CSS
+- **Google Fonts** - Lora & Nunito
+- **JSON** - Data storage and configuration
+
+## Important Configuration Notes
+
+### Location Consistency
+Ensure your location is consistent across:
+1. `data.json` → `school_info.location`
+2. `data.json` → `school_info.map_embed_url` (must match actual location)
+3. `data.json` → `school_info.address`
+
+**Current Issue:** The map embed points to Kathmandu but location says Butwal. Please update one to match the other.
+
+### Contact Information
+Update these placeholders in `data.json`:
+- ✅ WhatsApp: Updated to 9779847157110
+- ❌ Facebook: Still shows "https://facebook.com/yourpage"
+- ❌ Address: Still shows "Address galli, Butwal, Lumbini, Nepal"
+- ❌ Map: Shows Kathmandu but location says Butwal
+
+### Required Assets
+Create/add these files to `assets/` folder:
+- `founder.jpg` - Founder photo
+- `og-image.jpg` - Social sharing image (1200x630px)
+- `favicon.ico` and PNG variants
+- `apple-touch-icon.png`
+
+### Gallery Images
+Add photos to `assets/gallery/` matching the filenames in data.json:
+- `classroom-1.jpg`
+- `therapy-session.jpg`
+- `outdoor-play.jpg`
+- `art-class.jpg`
+- `library.jpg`
+- `family-workshop.jpg`
 
 ## License
 
