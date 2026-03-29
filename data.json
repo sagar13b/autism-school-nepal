@@ -5,7 +5,7 @@
         "location": "Tilottama-3, Rupandehi, Nepal",
         "logo_url": "assets/logo.jpg",
         "established": "2082/12/08 BS (March 2026 AD)",
-        "whatsapp_number": "9779847157110",
+        "whatsapp_number": "9779743679080",
         "facebook_page": "https://www.facebook.com/profile.php?id=61559651741049",
         "email": "info@siddharthaautism.org.np",
         "address": "Tilottama-3, Rupandehi, Lumbini Province, Nepal",
@@ -14,12 +14,40 @@
     "founder": {
         "name": "Narayani Kunwar Adhikari",
         "title": "Founder & Director",
-        "bio": "Narayani, is a dedicated advocate for children with autism in Nepal. Driven by compassion and a vision for inclusive education, she established Siddhartha Autism Care Center in March 2026 to provide specialized support and therapy for children on the autism spectrum in the Rupandehi region. Her commitment to creating accessible, evidence-based care is bringing hope to families throughout the area.",
+        "bio": "Narayani Kunwar Adhikari is a dedicated special education professional with extensive experience working with children with autism in Nepal. She served as an autism teacher and head of the sensory department at SERC (2013-2016), then as a Rehabilitation Therapist at Butwal Autism Care Society (2023-2025), and most recently as a Communication Facilitator at Autism Care Center Rupandehi (2025-2026). In March 2026, she founded Siddhartha Autism Care Center to continue her mission of providing specialized, compassionate support to children on the autism spectrum and their families.",
         "image_url": "assets/founder.jpg",
+        "work_experience": [
+            {
+                "position": "Founder & Director",
+                "organization": "Siddhartha Autism Care Center",
+                "period": "March 2026 - Present",
+                "location": "Tilottama-3, Rupandehi, Nepal"
+            },
+            {
+                "position": "Communication Facilitator",
+                "organization": "Autism Care Center Rupandehi Pvt. Ltd.",
+                "period": "April 2025 - March 2026",
+                "location": "Rupandehi, Nepal"
+            },
+            {
+                "position": "Rehabilitation Therapist",
+                "organization": "Butwal Autism Care Society Pvt. Ltd.",
+                "period": "February 2023 - April 2025",
+                "location": "Butwal, Nepal"
+            },
+            {
+                "position": "Autism Teacher & Head of Sensory Department",
+                "organization": "Special Education and Rehabilitation Center for Disabled Children (SERC)",
+                "period": "June 2013 - 2016",
+                "location": "Nepal"
+            }
+        ],
         "credentials": [
-            "Founder, Siddhartha Autism Care Center",
-            "Special Education Advocate",
-            "Community Leader in Autism Awareness"
+            "Founder, Siddhartha Autism Care Center (2026)",
+            "Former Communication Facilitator - Autism Care Center Rupandehi",
+            "Former Rehabilitation Therapist - Butwal Autism Care Society",
+            "Experienced Autism Teacher & Sensory Department Head",
+            "Special Education Advocate"
         ]
     },
     "content": {

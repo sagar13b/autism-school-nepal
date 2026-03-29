@@ -1,5 +1,5 @@
 // ============================================================
-//  Nepal Center for Autism Excellence — script.js
+//  Siddhartha Autism Care Center — script.js
 //  Fetches data.json and populates all DOM elements dynamically.
 // ============================================================
 
@@ -154,7 +154,7 @@ function initContactForm(waNumber) {
       `Hello, I am *${name}*.\n` +
       `Topic: ${topic}\n\n` +
       `${inquiry}\n\n` +
-      `_(Sent via NCAE website)_`;
+      `_(Sent via Siddhartha Autism Care Center website)_`;
 
     const url = buildWaLink(waNumber, message);
     window.open(url, "_blank", "noopener,noreferrer");
@@ -178,7 +178,7 @@ function initFloatingWa(number) {
   if (!btn) return;
   btn.href = buildWaLink(
     number,
-    "Hello! I would like to learn more about NCAE programs.",
+    "Hello! I would like to learn more about Siddhartha Autism Care Center programs.",
   );
   btn.setAttribute("aria-label", "Contact us on WhatsApp");
 }
@@ -188,7 +188,7 @@ function initThemeToggle() {
   const btn = document.getElementById("theme-toggle");
   if (!btn) return;
 
-  const stored = localStorage.getItem("ncae-theme");
+  const stored = localStorage.getItem("sacc-theme");
   if (stored === "dark")
     document.documentElement.setAttribute("data-theme", "dark");
 
@@ -199,7 +199,7 @@ function initThemeToggle() {
       "data-theme",
       isDark ? "light" : "dark",
     );
-    localStorage.setItem("ncae-theme", isDark ? "light" : "dark");
+    localStorage.setItem("sacc-theme", isDark ? "light" : "dark");
     btn.setAttribute("aria-pressed", String(!isDark));
     btn.textContent = isDark ? "🌙 Dark Mode" : "☀️ Light Mode";
   });
@@ -253,6 +253,15 @@ async function init() {
     setHref("footer-fb-link", si.facebook_page);
     setHref("footer-fb-link-2", si.facebook_page);
     document.title = si.name;
+
+    // ── Logo
+    if (si.logo_url) {
+      const logoImg = document.getElementById("header-logo");
+      if (logoImg) {
+        logoImg.src = si.logo_url;
+        logoImg.alt = `${si.name} Logo`;
+      }
+    }
 
     // ── Hero
     setText("hero-title", content.hero_title);
