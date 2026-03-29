@@ -1,12 +1,14 @@
-# Nepal Center for Autism Excellence
+# Siddhartha Autism Care Center
 
-**Empowering Every Child's Unique Potential**
+![Siddhartha Autism Care Center Logo](assets/logo.jpg)
 
-A professional, accessible, and data-driven website for the Nepal Center for Autism Excellence — a leading institution providing evidence-based education and support for children on the autism spectrum in Nepal.
+**Compassionate Care for Every Child**
+
+A professional, accessible, and data-driven website for the Siddhartha Autism Care Center — a newly established institution (March 2026) providing evidence-based education and support for children on the autism spectrum in Rupandehi, Nepal.
 
 ## About the Project
 
-This website showcases the programs, mission, and impact of the Nepal Center for Autism Excellence (NCAE), founded in 2010 to provide structured, supportive, and neuro-inclusive education for children on the autism spectrum in Nepal.
+This website showcases the programs, mission, and vision of the Siddhartha Autism Care Center, established in March 2026 (2082/12/08 BS) to provide compassionate, specialized care and therapy for children on the autism spectrum in Rupandehi, Nepal.
 
 ### Key Features
 
@@ -72,32 +74,34 @@ autism-school-nepal/
    ```json
    {
      "school_info": {
-       "name": "Nepal Center for Autism Excellence",
-       "tagline": "Where Every Mind Belongs",
-       "location": "Butwal, Lumbini, Nepal",
-       "whatsapp_number": "97798XXXXXXXX",
-       "facebook_page": "https://facebook.com/yourpage",
-       "email": "info@autismschool.edu.np",
-       "address": "Address galli, Butwal, Lumbini, Nepal",
+       "name": "Siddhartha Autism Care Center",
+       "tagline": "Compassionate Care for Every Child",
+       "location": "Tilottama-3, Rupandehi, Nepal",
+       "logo_url": "assets/logo.jpg",
+       "established": "2082/12/08 BS (March 2026 AD)",
+       "whatsapp_number": "9779847157110",
+       "facebook_page": "https://www.facebook.com/profile.php?id=61559651741049",
+       "email": "info@siddharthaautism.org.np",
+       "address": "Tilottama-3, Rupandehi, Lumbini Province, Nepal",
        "map_embed_url": "YOUR_GOOGLE_MAPS_EMBED_URL"
      },
      "founder": {
-       "name": "Dr. Arati Sharma",
-       "title": "Founder & Executive Director",
-       "bio": "Your founder bio here...",
+       "name": "Narayani Kunwar",
+       "title": "Founder & Director",
+       "bio": "Dedicated advocate for children with autism in Nepal...",
        "image_url": "assets/founder.jpg",
        "credentials": [
-         "Ph.D. Special Education, TU",
-         "Certified BCBA Supervisor",
-         "UNESCO Inclusive Education Fellow"
+         "Founder, Siddhartha Autism Care Center",
+         "Special Education Advocate",
+         "Community Leader in Autism Awareness"
        ]
      },
      "content": {
-       "hero_title": "Empowering Every Child's Unique Potential",
-       "hero_subtitle": "A structured, joyful, and evidence-based learning environment...",
-       "mission": "To provide a structured, supportive environment...",
+       "hero_title": "Compassionate Care for Children with Autism",
+       "hero_subtitle": "Newly established in March 2026, providing specialized therapy...",
+       "mission": "To provide comprehensive, compassionate care and evidence-based therapies...",
        "about_heading": "Our Story",
-       "about_body": "Founded in 2010...",
+       "about_body": "Established in March 2026 (2082/12/08 BS)...",
        "programs_heading": "Our Programs",
        "contact_heading": "Get In Touch"
      },
@@ -293,25 +297,35 @@ Four core programs:
 
 ### Location Consistency
 Ensure your location is consistent across:
-1. `data.json` → `school_info.location`
+1. `data.json` → `school_info.location` - Currently set to Tilottama-3, Rupandehi
 2. `data.json` → `school_info.map_embed_url` (must match actual location)
-3. `data.json` → `school_info.address`
+3. `data.json` → `school_info.address` - Currently set to Tilottama-3, Rupandehi
 
-**Current Issue:** The map embed points to Kathmandu but location says Butwal. Please update one to match the other.
+**Note:** Update the Google Maps embed URL to match your actual center location in Tilottama-3, Rupandehi.
 
 ### Contact Information
-Update these placeholders in `data.json`:
-- ✅ WhatsApp: Updated to 9779847157110
-- ❌ Facebook: Still shows "https://facebook.com/yourpage"
-- ❌ Address: Still shows "Address galli, Butwal, Lumbini, Nepal"
-- ❌ Map: Shows Kathmandu but location says Butwal
+Updated information in `data.json`:
+- ✅ WhatsApp: 9779847157110
+- ✅ Facebook: https://www.facebook.com/profile.php?id=61559651741049
+- ✅ Address: Tilottama-3, Rupandehi, Lumbini Province, Nepal
+- ✅ Email: info@siddharthaautism.org.np
+- ⚠️ Map: Update Google Maps embed URL to match Tilottama-3 location
 
 ### Required Assets
-Create/add these files to `assets/` folder:
-- `founder.jpg` - Founder photo
-- `og-image.jpg` - Social sharing image (1200x630px)
-- `favicon.ico` and PNG variants
-- `apple-touch-icon.png`
+Add/update these files in `assets/` folder:
+- ✅ `logo.jpg` - Center logo (the circular logo with Buddha and colorful figures)
+- ✅ `founder.jpg` - Founder photo
+- ✅ `og-image.jpg` - Social sharing image (1200x630px)
+- ⚠️ `favicon.ico` and PNG variants - To be created
+- ⚠️ `apple-touch-icon.png` - To be created
+
+**GitHub Image Display Fix:**
+The logo is now displayed in this README using relative path: `![Logo](assets/logo.jpg)`
+For images to show on GitHub:
+1. Save your logo image as `assets/logo.jpg`
+2. Commit the image file to the repository: `git add assets/logo.jpg`
+3. Push to GitHub: `git push`
+4. Images will then display using relative paths like `![Logo](assets/logo.jpg)`
 
 ### Gallery Images
 Add photos to `assets/gallery/` matching the filenames in data.json:
@@ -322,18 +336,30 @@ Add photos to `assets/gallery/` matching the filenames in data.json:
 - `library.jpg`
 - `family-workshop.jpg`
 
+## Quick Start - GitHub Image Fix
+
+To display your logo on GitHub:
+
+1. **Save the logo**: Save your logo image as `/Users/sbhusal/Desktop/autism-school-nepal/assets/logo.jpg`
+2. **Add to Git**: `git add assets/logo.jpg`
+3. **Commit**: `git commit -m "Add center logo"`
+4. **Push**: `git push`
+
+The logo will then appear at the top of this README on GitHub!
+
 ## License
 
-This project is created for the Nepal Center for Autism Excellence.
+This project is created for the Siddhartha Autism Care Center.
 
 ## Contact
 
-- **Website**: [Live URL]
-- **Email**: info@autismschool.edu.np
-- **WhatsApp**: [Contact Number]
-- **Facebook**: [Facebook Page]
-- **Location**: Butwal, Lumbini, Nepal
+- **Name**: Siddhartha Autism Care Center
+- **Established**: March 2026 (2082/12/08 BS)
+- **Email**: info@siddharthaautism.org.np
+- **WhatsApp**: +977 984-7157110
+- **Facebook**: [Siddhartha Autism Care Center](https://www.facebook.com/profile.php?id=61559651741049)
+- **Location**: Tilottama-3, Rupandehi, Lumbini Province, Nepal
 
 ---
 
-Built with care for neuro-inclusive Nepal.
+Built with care for children with autism in Nepal.

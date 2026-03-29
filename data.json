@@ -1,31 +1,33 @@
 {
     "school_info": {
-        "name": "Autism Care Center Rupandehi Pvt. Ltd.",
+        "name": "Siddhartha Autism Care Center",
         "tagline": "Compassionate Care for Every Child",
-        "location": "Butwal, Rupandehi, Nepal",
+        "location": "Tilottama-3, Rupandehi, Nepal",
+        "logo_url": "assets/logo.jpg",
+        "established": "2082/12/08 BS (March 2026 AD)",
         "whatsapp_number": "9779847157110",
         "facebook_page": "https://www.facebook.com/profile.php?id=61559651741049",
-        "email": "info@autismcarerupandehi.org.np",
-        "address": "Butwal, Rupandehi, Lumbini Province, Nepal",
+        "email": "info@siddharthaautism.org.np",
+        "address": "Tilottama-3, Rupandehi, Lumbini Province, Nepal",
         "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56490.89494584458!2d83.42381737910156!3d27.700092899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996866c03bc2c81%3A0x49a7f2f70e2f3e4f!2sButwal%2032907!5e0!3m2!1sen!2snp!4v1711295000000!5m2!1sen!2snp"
     },
     "founder": {
-        "name": "Narayani Kunwar",
+        "name": "Narayani Kunwar Adhikari",
         "title": "Founder & Director",
-        "bio": "Narayani Kunwar is a dedicated advocate for children with autism in Nepal. Driven by compassion and a vision for inclusive education, she established Autism Care Center Rupandehi to provide specialized support and therapy for children on the autism spectrum in the Butwal region. Her commitment to creating accessible, evidence-based care has made a significant impact on families throughout Rupandehi and beyond.",
+        "bio": "Narayani, is a dedicated advocate for children with autism in Nepal. Driven by compassion and a vision for inclusive education, she established Siddhartha Autism Care Center in March 2026 to provide specialized support and therapy for children on the autism spectrum in the Rupandehi region. Her commitment to creating accessible, evidence-based care is bringing hope to families throughout the area.",
         "image_url": "assets/founder.jpg",
         "credentials": [
-            "Founder, Autism Care Center Rupandehi",
+            "Founder, Siddhartha Autism Care Center",
             "Special Education Advocate",
             "Community Leader in Autism Awareness"
         ]
     },
     "content": {
         "hero_title": "Compassionate Care for Children with Autism",
-        "hero_subtitle": "Providing specialized therapy, education, and family support for children on the autism spectrum in Rupandehi, Nepal.",
+        "hero_subtitle": "Newly established in March 2026, providing specialized therapy, education, and family support for children on the autism spectrum in Rupandehi, Nepal.",
         "mission": "To provide comprehensive, compassionate care and evidence-based therapies for children with autism in Nepal, ensuring every child has access to the support they need to reach their full potential.",
         "about_heading": "Our Story",
-        "about_body": "Autism Care Center Rupandehi Pvt. Ltd. was established to address the critical need for specialized autism services in the Butwal region. We provide individualized therapy programs, educational support, and family counseling to help children with autism develop essential skills and thrive in their communities. Our dedicated team works closely with families to create personalized care plans that celebrate each child's unique strengths.",
+        "about_body": "Siddhartha Autism Care Center was established in March 2026 (2082/12/08 BS) to address the critical need for specialized autism services in the Rupandehi region. As a newly founded center, we are committed to providing individualized therapy programs, educational support, and family counseling to help children with autism develop essential skills and thrive in their communities. Our dedicated team works closely with families to create personalized care plans that celebrate each child's unique strengths.",
         "programs_heading": "Our Programs",
         "testimonials_heading": "What Families Say",
         "gallery_heading": "Our Spaces",
@@ -67,39 +69,39 @@
     ],
     "stats": [
         {
-            "value": "120+",
-            "label": "Families Served"
-        },
-        {
-            "value": "15",
-            "label": "Years of Service"
-        },
-        {
-            "value": "28",
-            "label": "Specialist Staff"
+            "value": "2026",
+            "label": "Newly Established"
         },
         {
             "value": "4",
             "label": "Core Programs"
+        },
+        {
+            "value": "Dedicated",
+            "label": "Specialist Team"
+        },
+        {
+            "value": "Modern",
+            "label": "Facilities"
         }
     ],
     "testimonials": [
         {
-            "name": "Parent from Butwal",
-            "role": "Parent of Child with Autism",
-            "quote": "Autism Care Center Rupandehi has been a blessing for our family. The caring staff and specialized programs have helped our child make wonderful progress. We are so grateful for their support.",
+            "name": "Early Supporter",
+            "role": "Community Member",
+            "quote": "We are so grateful to have Siddhartha Autism Care Center opening in our community. This specialized support has been greatly needed in Rupandehi, and we look forward to the positive impact it will bring to families.",
             "avatar": "👩"
         },
         {
-            "name": "Family from Rupandehi",
-            "role": "Parents of Student",
-            "quote": "Finding this center gave us hope. The therapists truly understand our child's needs and have helped our family learn how to support their development. Thank you for everything you do.",
+            "name": "Local Family",
+            "role": "Parent",
+            "quote": "Finally, there is a dedicated center for autism care in our region. The compassionate approach and professional setup of Siddhartha Autism Care Center gives us hope for our child's future.",
             "avatar": "👨"
         },
         {
-            "name": "Local Community Member",
+            "name": "Tilottama Resident",
             "role": "Supporter",
-            "quote": "The work being done at Autism Care Center Rupandehi is so important for our community. They are making a real difference in the lives of children and families affected by autism.",
+            "quote": "The establishment of Siddhartha Autism Care Center is a wonderful development for our community. Such specialized services are essential, and we are excited to see this center serve families in need.",
             "avatar": "👩"
         }
     ],
