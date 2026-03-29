@@ -135,34 +135,34 @@
     ],
     "gallery": [
         {
-            "url": "assets/gallery/classroom-1.jpg",
-            "alt": "Bright and welcoming classroom with educational materials",
-            "caption": "Our sensory-friendly learning spaces"
+            "url": "assets/gallery/classroom-learning.jpg",
+            "alt": "Children engaged in interactive classroom learning activities",
+            "caption": "Interactive Learning Environment"
         },
         {
             "url": "assets/gallery/therapy-session.jpg",
-            "alt": "One-on-one therapy session",
-            "caption": "Individualized therapy sessions"
+            "alt": "Professional one-on-one therapy session with child",
+            "caption": "Individualized Therapy Sessions"
         },
         {
-            "url": "assets/gallery/outdoor-play.jpg",
-            "alt": "Children playing in outdoor area",
-            "caption": "Outdoor play and social activities"
+            "url": "assets/gallery/children-activity.jpg",
+            "alt": "Children participating in group activities and play",
+            "caption": "Group Activities & Social Skills"
         },
         {
-            "url": "assets/gallery/art-class.jpg",
-            "alt": "Students engaged in art activities",
-            "caption": "Creative arts therapy"
+            "url": "assets/gallery/art-therapy.jpg",
+            "alt": "Creative art therapy session with child",
+            "caption": "Creative Arts Therapy"
         },
         {
-            "url": "assets/gallery/library.jpg",
-            "alt": "Cozy reading corner with books",
-            "caption": "Our literacy and reading corner"
+            "url": "assets/gallery/learning-toys.jpg",
+            "alt": "Educational toys and sensory materials for learning",
+            "caption": "Sensory & Educational Materials"
         },
         {
-            "url": "assets/gallery/family-workshop.jpg",
-            "alt": "Parents attending a workshop",
-            "caption": "Family support workshops"
+            "url": "assets/gallery/family-support.jpg",
+            "alt": "Family support and counseling session",
+            "caption": "Family Support & Guidance"
         }
     ]
 }

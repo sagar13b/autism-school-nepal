@@ -42,7 +42,9 @@
 
         .error-container {
             text-align: center;
-            max-width: 600px;
+            max-width: 650px;
+            width: 100%;
+            padding: 2rem 1.5rem;
         }
 
         .error-code {
@@ -53,27 +55,31 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            line-height: 1;
-            margin: 0;
+            line-height: 1.1;
+            margin: 0 0 1rem 0;
         }
 
         .error-emoji {
             font-size: clamp(3rem, 8vw, 5rem);
-            margin: 1rem 0;
+            margin: 1rem auto 1.5rem auto;
+            display: block;
         }
 
         h1 {
             font-family: var(--font-heading);
             font-size: clamp(1.5rem, 4vw, 2.5rem);
             color: var(--text-primary);
-            margin: 1rem 0;
+            margin: 1rem auto;
+            text-align: center;
         }
 
         p {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
             color: var(--text-secondary);
-            margin: 1.5rem 0;
-            line-height: 1.7;
+            margin: 1.5rem auto;
+            line-height: 1.8;
+            max-width: 550px;
+            text-align: center;
         }
 
         .btn-home {
@@ -85,8 +91,9 @@
             padding: 0.9rem 2rem;
             border-radius: 10px;
             text-decoration: none;
-            margin-top: 1.5rem;
+            margin: 1.5rem auto 0 auto;
             transition: opacity 0.2s, transform 0.2s;
+            text-align: center;
         }
 
         .btn-home:hover {
@@ -95,16 +102,18 @@
         }
 
         .suggestions {
-            margin-top: 2.5rem;
+            margin: 3rem auto 0 auto;
             padding-top: 2rem;
             border-top: 2px solid rgba(42, 157, 143, 0.2);
+            text-align: center;
         }
 
         .suggestions h2 {
             font-family: var(--font-heading);
             font-size: 1.2rem;
             color: var(--text-primary);
-            margin-bottom: 1rem;
+            margin: 0 auto 1.25rem auto;
+            text-align: center;
         }
 
         .suggestion-links {
@@ -137,7 +146,7 @@
         <div class="error-emoji" aria-hidden="true">🌸</div>
         <h1>Page Not Found</h1>
         <p>
-            We're sorry, but the page you're looking for doesn't exist or has been moved.
+            We're sorry, but the page you're looking for doesn't exist or has been moved.<br>
             Every child's journey is unique, and sometimes paths lead to unexpected places.
         </p>
         <a href="index.html" class="btn-home">Return to Home</a>
