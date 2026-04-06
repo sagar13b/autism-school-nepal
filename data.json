@@ -14,7 +14,7 @@
     "founder": {
         "name": "Narayani Kunwar Adhikari",
         "title": "Founder & Director",
-        "bio": "Narayani Kunwar Adhikari is a dedicated special education professional with extensive experience working with children with autism in Nepal. She served as an autism teacher and head of the sensory department at SERC (2013-2016), then as a Rehabilitation Therapist at Butwal Autism Care Society (2023-2025), and most recently as a Communication Facilitator at Autism Care Center Rupandehi (2025-2026). In March 2026, she founded Siddhartha Autism Care Center to continue her mission of providing specialized, compassionate support to children on the autism spectrum and their families.",
+        "bio": "Narayani Kunwar Adhikari is a dedicated special education professional pursuing a Masters in Inclusive & Special Education at Kathmandu University. With extensive experience working with children with autism and special needs in Nepal, she has served in various capacities including as a part-time Therapist at the deafblind resource class in Rupandehi (2021-2023), an autism teacher and head of the sensory department at SERC (2013-2016), a Rehabilitation Therapist at Butwal Autism Care Society (2023-2025), and most recently as a Communication Facilitator at Autism Care Center Rupandehi (2025-2026). In March 2026, she founded Siddhartha Autism Care Center to continue her mission of providing specialized, compassionate support to children on the autism spectrum and their families.",
         "image_url": "assets/founder.jpg",
         "work_experience": [
             {
@@ -36,6 +36,12 @@
                 "location": "Butwal, Nepal"
             },
             {
+                "position": "Part-time Therapist (Deafblind Resource Class)",
+                "organization": "Nepal Association of the Blind (NAB) - Rupandehi Deafblind Project",
+                "period": "October 2021 - March 2023",
+                "location": "Shanti Namuna Higher Secondary School, Rupandehi, Nepal"
+            },
+            {
                 "position": "Autism Teacher & Head of Sensory Department",
                 "organization": "Special Education and Rehabilitation Center for Disabled Children (SERC)",
                 "period": "June 2013 - 2016",
@@ -43,12 +49,37 @@
             }
         ],
         "credentials": [
+            "Masters in Inclusive & Special Education - Kathmandu University (Pursuing)",
             "Founder, Siddhartha Autism Care Center (2026)",
             "Former Communication Facilitator - Autism Care Center Rupandehi",
             "Former Rehabilitation Therapist - Butwal Autism Care Society",
+            "Former Deafblind Therapist - Nepal Association of the Blind",
             "Experienced Autism Teacher & Sensory Department Head",
             "Special Education Advocate"
-        ]
+        ],
+        "education": [
+            {
+                "degree": "Masters in Inclusive & Special Education",
+                "institution": "Kathmandu University",
+                "status": "Pursuing",
+                "validity": "Valid until August 2026",
+                "credential_image": "assets/credentials/ku-student-id.jpeg"
+            }
+        ],
+        "certifications": [
+            {
+                "title": "Deafblind Resource Class Therapist Certification",
+                "organization": "Nepal Association of the Blind (NAB)",
+                "date": "May 17, 2023",
+                "reference_number": "NAB/046/2023",
+                "description": "Certification of service as part-time Therapist at deafblind resource class, Shanti Namuna Higher Secondary School, Rupandehi Deafblind Project (October 2021 - March 2023)",
+                "credential_image": "assets/credentials/nab-certificate.jpeg"
+            }
+        ],
+        "personal_info": {
+            "father_name": "Parashwor Kunwar",
+            "permanent_address": "Sandhikharka-10, Arghakhanchi District, Nepal"
+        }
     },
     "content": {
         "hero_title": "Compassionate Care for Children with Autism",
