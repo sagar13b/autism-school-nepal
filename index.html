@@ -128,6 +128,12 @@
             box-sizing: border-box;
         }
 
+        /* Prevent text overflow globally */
+        p, h1, h2, h3, h4, h5, h6, li, span {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
         html {
             scroll-behavior: smooth;
             font-size: 16px;
@@ -561,17 +567,9 @@
             background: var(--bg-about);
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        @media (max-width: 700px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
+        .about-content {
+            max-width: 850px;
+            margin: 0 auto;
         }
 
         .mission-block {
@@ -590,14 +588,39 @@
             margin: 0;
         }
 
-        /* Founder Card - MODERNIZED */
+        /* Founder Section - Clean & Professional */
+        #founder-section {
+            background: var(--bg-about);
+            padding: 4rem 1.5rem;
+        }
+
+        .founder-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .founder-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+        }
+
         .founder-card {
-            background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-hero) 100%);
+            background: var(--bg-surface);
             border-radius: var(--radius-card);
-            padding: 2.5rem;
+            padding: 2rem;
             box-shadow: 0 10px 40px rgba(42, 157, 143, 0.15);
             border: 2px solid var(--border-light);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
@@ -618,8 +641,8 @@
         }
 
         .founder-img-wrap {
-            width: 140px;
-            height: 140px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             overflow: hidden;
             border: 4px solid var(--accent-teal);
@@ -633,9 +656,11 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .founder-card:hover .founder-img-wrap {
-            transform: scale(1.05);
-            box-shadow: 0 12px 32px rgba(42, 157, 143, 0.4);
+        @media (max-width: 768px) {
+            .founder-img-wrap {
+                width: 150px;
+                height: 150px;
+            }
         }
 
         #founder-img {
@@ -672,40 +697,74 @@
 
         .founder-bio {
             color: var(--text-secondary);
-            font-size: 0.98rem;
-            margin: 1.25rem 0;
+            font-size: 0.95rem;
+            margin: 0;
             line-height: 1.7;
-            text-align: center;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .founder-bio {
+                text-align: center;
+            }
+        }
+
+        .founder-details {
+            background: var(--bg-surface);
+            border-radius: var(--radius-card);
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--border-light);
+        }
+
+        .founder-details h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .founder-details-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .detail-section h4 {
+            color: var(--accent-teal);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
         }
 
         #founder-credentials {
             list-style: none;
             padding: 0;
-            margin: 1.5rem 0 0 0;
+            margin: 0;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
         }
 
         #founder-credentials li {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            padding: 0.5rem 0.8rem 0.5rem 2.2rem;
+            padding: 0.6rem 0.8rem 0.6rem 2rem;
             position: relative;
             background: rgba(42, 157, 143, 0.05);
             border-radius: 8px;
             transition: background 0.2s ease, padding-left 0.2s ease;
+            line-height: 1.5;
         }
 
         #founder-credentials li:hover {
             background: rgba(42, 157, 143, 0.12);
-            padding-left: 2.4rem;
+            padding-left: 2.2rem;
         }
 
         #founder-credentials li::before {
             content: '✓';
             position: absolute;
-            left: 0.8rem;
+            left: 0.7rem;
             color: var(--accent-green);
             font-weight: 700;
             font-size: 1rem;
@@ -821,18 +880,28 @@
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
             display: inline-block;
             padding: 0.25rem 0.75rem;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(42, 157, 143, 0.15);
+            border: 1px solid rgba(42, 157, 143, 0.3);
             border-radius: 12px;
+        }
+
+        [data-theme="dark"] .program-age {
+            background: rgba(79, 209, 197, 0.15);
+            border-color: rgba(79, 209, 197, 0.3);
+            color: var(--accent-teal);
         }
 
         .program-title {
             font-size: 1.15rem;
             margin: 0 0 0.75rem;
             font-weight: 700;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         .program-desc {
@@ -840,6 +909,9 @@
             color: var(--text-secondary);
             margin: 0;
             line-height: 1.7;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         /* ═══════════════════════════════════════════
@@ -1368,35 +1440,50 @@
         <!-- ABOUT -->
         <section id="about" aria-labelledby="about-heading">
             <div class="section-inner">
-                <div class="about-grid">
-                    <!-- Left: Story + Mission -->
-                    <div>
-                        <span class="section-label">Who We Are</span>
-                        <h2 class="section-heading" id="about-heading">Our Story</h2>
-                        <p id="about-body" style="color: var(--text-secondary);">
-                            Siddhartha Autism Care Center was established in March 2026 (2082/12/08 BS) to address the critical need for specialized autism services in the Rupandehi region.
-                        </p>
-                        <div class="mission-block" role="blockquote">
-                            <p id="mission-text">To provide comprehensive, compassionate care and evidence-based therapies for children with autism in Nepal, ensuring every child has access to the support they need to reach their full potential.</p>
+                <div class="about-content">
+                    <span class="section-label">Who We Are</span>
+                    <h2 class="section-heading" id="about-heading">Our Story</h2>
+                    <p id="about-body" style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8;">
+                        Siddhartha Autism Care Center was established in March 2026 (2082/12/08 BS) to address the critical need for specialized autism services in the Rupandehi region.
+                    </p>
+                    <div class="mission-block" role="blockquote">
+                        <p id="mission-text">To provide comprehensive, compassionate care and evidence-based therapies for children with autism in Nepal, ensuring every child has access to the support they need to reach their full potential.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOUNDER -->
+        <section id="founder-section" aria-labelledby="founder-heading">
+            <div class="founder-container">
+                <span class="section-label">Leadership</span>
+                <h2 class="section-heading" id="founder-heading" style="text-align: center; margin-bottom: 3rem;">Meet Our Founder</h2>
+
+                <div class="founder-grid">
+                    <!-- Left: Founder Profile Card -->
+                    <div class="founder-card">
+                        <div class="founder-img-wrap" aria-hidden="true">
+                            <img id="founder-img" src="" alt="" />
                         </div>
+                        <h3 class="founder-name" id="founder-name">Narayani Kunwar Adhikari</h3>
+                        <p class="founder-title-tag" id="founder-title">Founder &amp; Director</p>
                     </div>
 
-                    <!-- Right: Founder Card -->
-                    <div>
-                        <article class="founder-card" aria-label="About our founder">
-                            <div class="founder-img-wrap" aria-hidden="true">
-                                <img id="founder-img" src="" alt="" />
-                                <!-- Fallback emoji shown via CSS if img fails to load -->
+                    <!-- Right: Founder Details -->
+                    <div class="founder-details">
+                        <h3>About</h3>
+                        <p class="founder-bio" id="founder-bio">
+                            Dedicated special education professional with extensive experience working with children with autism in Nepal.
+                        </p>
+
+                        <div class="founder-details-grid">
+                            <div class="detail-section">
+                                <h4>Qualifications & Experience</h4>
+                                <ul id="founder-credentials" aria-label="Qualifications">
+                                    <!-- Populated by JS -->
+                                </ul>
                             </div>
-                            <h3 class="founder-name" id="founder-name">Narayani Kunwar Adhikari</h3>
-                            <p class="founder-title-tag" id="founder-title">Founder &amp; Director</p>
-                            <p class="founder-bio" id="founder-bio">
-                                Dedicated special education professional with extensive experience working with children with autism in Nepal.
-                            </p>
-                            <ul id="founder-credentials" aria-label="Qualifications">
-                                <!-- Populated by JS -->
-                            </ul>
-                        </article>
+                        </div>
                     </div>
                 </div>
             </div>
