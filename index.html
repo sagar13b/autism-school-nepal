@@ -292,6 +292,34 @@
             background: var(--border-light);
         }
 
+        #language-toggle {
+            background: var(--bg-about);
+            border: 1.5px solid var(--border-light);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: var(--font-body);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            white-space: nowrap;
+            margin-left: 0.25rem;
+        }
+
+        #language-toggle:hover {
+            background: var(--border-light);
+        }
+
+        #language-toggle:focus {
+            outline: 3px solid var(--accent-teal);
+            outline-offset: 3px;
+        }
+
+        #language-toggle[aria-pressed="true"] {
+            background: var(--border-light);
+        }
+
         /* ═══════════════════════════════════════════
        HERO SECTION
        ═══════════════════════════════════════════ */
@@ -1291,6 +1319,7 @@
                 <a href="#gallery">Gallery</a>
                 <a href="#contact">Contact</a>
                 <button id="theme-toggle" aria-pressed="false">🌙 Dark Mode</button>
+                <button id="language-toggle" aria-pressed="false">🇬🇧 English</button>
             </nav>
         </div>
     </header>

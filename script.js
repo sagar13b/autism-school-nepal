@@ -5,6 +5,10 @@
 
 const DATA_URL = "data.json";
 
+// ── Language State ─────────────────────────────────────────
+let currentLanguage = localStorage.getItem("sacc-language") || "en";
+let translationData = null;
+
 // ── Utility: encode text for WhatsApp URL ──────────────────
 const waEncode = (text) => encodeURIComponent(text);
 
@@ -145,20 +149,35 @@ function initContactForm(waNumber) {
     const inquiry = document.getElementById("form-inquiry").value.trim();
     const topic = document.getElementById("form-topic").value;
 
+    // Get current language strings
+    const ui = translationData?.ui_strings?.[currentLanguage]?.contact;
+    const errorMsg = ui?.validation_error || "Please fill in your name and message.";
+    const successMsg = ui?.success_message || "Opening WhatsApp… 🎉";
+
     if (!name || !inquiry) {
-      showFormFeedback("Please fill in your name and message.", "error");
+      showFormFeedback(errorMsg, "error");
       return;
     }
 
-    const message =
-      `Hello, I am *${name}*.\n` +
-      `Topic: ${topic}\n\n` +
-      `${inquiry}\n\n` +
-      `_(Sent via Siddhartha Autism Care Center website)_`;
+    // Use language-specific message template
+    let message;
+    if (ui?.wa_message_template) {
+      message = ui.wa_message_template
+        .replace("{name}", name)
+        .replace("{topic}", topic)
+        .replace("{message}", inquiry);
+    } else {
+      // Fallback to English
+      message =
+        `Hello, I am *${name}*.\n` +
+        `Topic: ${topic}\n\n` +
+        `${inquiry}\n\n` +
+        `_(Sent via Siddhartha Autism Care Center website)_`;
+    }
 
     const url = buildWaLink(waNumber, message);
     window.open(url, "_blank", "noopener,noreferrer");
-    showFormFeedback("Opening WhatsApp… 🎉", "success");
+    showFormFeedback(successMsg, "success");
     form.reset();
   });
 }
@@ -176,10 +195,12 @@ function showFormFeedback(msg, type) {
 function initFloatingWa(number) {
   const btn = document.getElementById("wa-float");
   if (!btn) return;
-  btn.href = buildWaLink(
-    number,
-    "Hello! I would like to learn more about Siddhartha Autism Care Center programs.",
-  );
+
+  // Get language-specific message
+  const ui = translationData?.ui_strings?.[currentLanguage]?.contact;
+  const message = ui?.wa_float_message || "Hello! I would like to learn more about Siddhartha Autism Care Center programs.";
+
+  btn.href = buildWaLink(number, message);
   btn.setAttribute("aria-label", "Contact us on WhatsApp");
 }
 
@@ -233,6 +254,248 @@ function initMap(url) {
   frame.src = url;
 }
 
+// ── Language Switching ─────────────────────────────────────
+function applyTranslations(lang) {
+  if (!translationData) return;
+
+  const ui = translationData.ui_strings[lang];
+  if (!ui) return;
+
+  // Navigation links
+  const navLinks = document.querySelectorAll("nav a");
+  if (navLinks.length >= 5) {
+    navLinks[0].textContent = ui.nav.about;
+    navLinks[1].textContent = ui.nav.programs;
+    navLinks[2].textContent = ui.nav.testimonials;
+    navLinks[3].textContent = ui.nav.gallery;
+    navLinks[4].textContent = ui.nav.contact;
+  }
+
+  // Hero badge
+  const heroBadge = document.querySelector(".hero-badge");
+  if (heroBadge) heroBadge.textContent = ui.hero.badge;
+
+  // Hero CTA buttons
+  const ctaButtons = document.querySelectorAll(".hero-cta-group .cta-btn");
+  if (ctaButtons.length >= 2) {
+    ctaButtons[0].textContent = ui.hero.cta_programs;
+    ctaButtons[1].textContent = ui.hero.cta_contact;
+  }
+
+  // Contact form labels
+  const nameLabel = document.querySelector('label[for="form-name"]');
+  if (nameLabel) {
+    nameLabel.innerHTML = ui.contact.form_name_label + ' <span aria-hidden="true">*</span>';
+  }
+
+  const topicLabel = document.querySelector('label[for="form-topic"]');
+  if (topicLabel) topicLabel.textContent = ui.contact.form_topic_label;
+
+  const messageLabel = document.querySelector('label[for="form-inquiry"]');
+  if (messageLabel) {
+    messageLabel.innerHTML = ui.contact.form_message_label + ' <span aria-hidden="true">*</span>';
+  }
+
+  const nameInput = document.getElementById("form-name");
+  if (nameInput) nameInput.placeholder = ui.contact.form_name_placeholder;
+
+  const messageInput = document.getElementById("form-inquiry");
+  if (messageInput) messageInput.placeholder = ui.contact.form_message_placeholder;
+
+  // Contact form topic options
+  const topicSelect = document.getElementById("form-topic");
+  if (topicSelect && topicSelect.options.length >= 5) {
+    topicSelect.options[0].textContent = ui.contact.topic_enrollment;
+    topicSelect.options[1].textContent = ui.contact.topic_general;
+    topicSelect.options[2].textContent = ui.contact.topic_therapy;
+    topicSelect.options[3].textContent = ui.contact.topic_visit;
+    topicSelect.options[4].textContent = ui.contact.topic_general;
+  }
+
+  // Contact form submit button
+  const submitBtn = document.querySelector("#contact-form button[type='submit'] span");
+  if (submitBtn) submitBtn.textContent = ui.contact.form_submit;
+
+  // Contact info labels
+  const contactLabels = document.querySelectorAll(".contact-info .info-label");
+  if (contactLabels.length >= 3) {
+    contactLabels[0].textContent = ui.contact.address_label;
+    contactLabels[1].textContent = ui.contact.email_label;
+  }
+
+  // Footer navigation links
+  const footerNavLinks = document.querySelectorAll(".footer-links a");
+  if (footerNavLinks.length >= 5) {
+    footerNavLinks[0].textContent = ui.nav.about;
+    footerNavLinks[1].textContent = ui.nav.programs;
+    footerNavLinks[2].textContent = ui.nav.testimonials;
+    footerNavLinks[3].textContent = ui.nav.gallery;
+    footerNavLinks[4].textContent = ui.nav.contact;
+  }
+
+  // Footer tagline and copyright
+  const footerTagline = document.querySelector("footer p[style*='font-size:0.88rem']");
+  if (footerTagline) {
+    const si = translationData.school_info[currentLanguage];
+    if (si) {
+      if (currentLanguage === "ne") {
+        footerTagline.textContent = si.tagline + " • स्थापना मार्च २०२६";
+      } else {
+        footerTagline.textContent = si.tagline + " • Established March 2026";
+      }
+    }
+  }
+
+  const footerCopy = document.querySelector(".footer-copy");
+  if (footerCopy) {
+    const year = new Date().getFullYear();
+    const si = translationData.school_info[currentLanguage];
+    if (si && currentLanguage === "ne") {
+      footerCopy.innerHTML = `© <span id="footer-year">${year}</span> ${si.name}। नेपालका बालबालिका र परिवारहरूको लागि ❤️ सँग निर्मित।`;
+    } else if (si) {
+      footerCopy.innerHTML = `© <span id="footer-year">${year}</span> ${si.name}. Built with ❤️ for children and families in Nepal.`;
+    }
+  }
+}
+
+function updateMetaTags(lang) {
+  if (!translationData) return;
+
+  const si = translationData.school_info[lang];
+  const content = translationData.content[lang];
+
+  if (!si || !content) return;
+
+  // Update HTML lang attribute
+  document.documentElement.setAttribute("lang", lang);
+
+  // Update title
+  document.title = si.name;
+
+  // Update meta description
+  let metaDesc = document.querySelector('meta[name="description"]');
+  if (!metaDesc) {
+    metaDesc = document.createElement("meta");
+    metaDesc.name = "description";
+    document.head.appendChild(metaDesc);
+  }
+  metaDesc.content = content.hero_subtitle;
+
+  // Update OG tags
+  let ogTitle = document.querySelector('meta[property="og:title"]');
+  if (!ogTitle) {
+    ogTitle = document.createElement("meta");
+    ogTitle.setAttribute("property", "og:title");
+    document.head.appendChild(ogTitle);
+  }
+  ogTitle.content = si.name;
+
+  let ogDesc = document.querySelector('meta[property="og:description"]');
+  if (!ogDesc) {
+    ogDesc = document.createElement("meta");
+    ogDesc.setAttribute("property", "og:description");
+    document.head.appendChild(ogDesc);
+  }
+  ogDesc.content = content.hero_subtitle;
+}
+
+function renderContentWithLanguage(lang) {
+  if (!translationData) return;
+
+  const si = translationData.school_info[lang];
+  const content = translationData.content[lang];
+  const founder = translationData.founder[lang];
+  const programs = translationData.programs[lang];
+  const stats = translationData.stats[lang];
+  const testimonials = translationData.testimonials[lang];
+  const gallery = translationData.gallery[lang];
+
+  if (!si || !content || !founder || !programs || !stats || !testimonials || !gallery) return;
+
+  // School info
+  setText("school-name", si.name);
+  setText("school-name-footer", si.name);
+  setText("school-location", si.location);
+  setText("school-tagline", si.tagline);
+  setText("school-address", si.address);
+
+  // Hero
+  setText("hero-title", content.hero_title);
+  setText("hero-subtitle", content.hero_subtitle);
+
+  // About
+  setText("about-heading", content.about_heading);
+  setText("about-body", content.about_body);
+  setText("mission-text", content.mission);
+
+  // Founder
+  setText("founder-name", founder.name);
+  setText("founder-title", founder.title);
+  setText("founder-bio", founder.bio);
+  renderCredentials(founder.credentials);
+
+  // Section headings
+  setText("programs-heading", content.programs_heading);
+  setText("testimonials-heading", content.testimonials_heading);
+  setText("gallery-heading", content.gallery_heading);
+  setText("contact-heading", content.contact_heading);
+
+  // Re-render dynamic content
+  renderPrograms(programs);
+  renderStats(stats);
+  renderTestimonials(testimonials);
+  renderGallery(gallery);
+}
+
+function switchLanguage(lang) {
+  if (!translationData || !translationData.ui_strings[lang]) return;
+
+  currentLanguage = lang;
+  localStorage.setItem("sacc-language", lang);
+
+  // Update all content
+  updateMetaTags(lang);
+  renderContentWithLanguage(lang);
+  applyTranslations(lang);
+
+  // Update WhatsApp messages
+  const ui = translationData.ui_strings[lang];
+  const waNumber = translationData.school_info.whatsapp_number;
+
+  if (ui && waNumber) {
+    // Update floating WhatsApp button
+    const waBtn = document.getElementById("wa-float");
+    if (waBtn) {
+      waBtn.href = buildWaLink(waNumber, ui.contact.wa_float_message);
+    }
+  }
+}
+
+function initLanguageToggle() {
+  const btn = document.getElementById("language-toggle");
+  if (!btn) return;
+
+  // Set initial button text and state
+  updateLanguageButton(btn, currentLanguage);
+
+  // Listen for clicks
+  btn.addEventListener("click", () => {
+    const newLang = currentLanguage === "en" ? "ne" : "en";
+    switchLanguage(newLang);
+    updateLanguageButton(btn, newLang);
+  });
+}
+
+function updateLanguageButton(btn, lang) {
+  if (lang === "ne") {
+    btn.textContent = "🇳🇵 नेपाली";
+    btn.setAttribute("aria-pressed", "true");
+  } else {
+    btn.textContent = "🇬🇧 English";
+    btn.setAttribute("aria-pressed", "false");
+  }
+}
+
 // ── Main bootstrap ─────────────────────────────────────────
 async function init() {
   try {
@@ -240,7 +503,21 @@ async function init() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
-    const { school_info: si, founder, content, programs, stats, testimonials, gallery } = data;
+    // Store data globally for language switching
+    translationData = data;
+
+    // Extract language-specific data
+    const si = data.school_info[currentLanguage];
+    const founder = data.founder[currentLanguage];
+    const content = data.content[currentLanguage];
+    const programs = data.programs[currentLanguage];
+    const stats = data.stats[currentLanguage];
+    const testimonials = data.testimonials[currentLanguage];
+    const gallery = data.gallery[currentLanguage];
+
+    // Language-independent data
+    const siCommon = data.school_info;
+    const founderCommon = data.founder;
 
     // ── School meta
     setText("school-name", si.name);
@@ -248,17 +525,17 @@ async function init() {
     setText("school-location", si.location);
     setText("school-tagline", si.tagline);
     setText("school-address", si.address);
-    setText("school-email", si.email);
-    setHref("footer-email-link", `mailto:${si.email}`);
-    setHref("footer-fb-link", si.facebook_page);
-    setHref("footer-fb-link-2", si.facebook_page);
+    setText("school-email", siCommon.email);
+    setHref("footer-email-link", `mailto:${siCommon.email}`);
+    setHref("footer-fb-link", siCommon.facebook_page);
+    setHref("footer-fb-link-2", siCommon.facebook_page);
     document.title = si.name;
 
     // ── Logo
-    if (si.logo_url) {
+    if (siCommon.logo_url) {
       const logoImg = document.getElementById("header-logo");
       if (logoImg) {
-        logoImg.src = si.logo_url;
+        logoImg.src = siCommon.logo_url;
         logoImg.alt = `${si.name} Logo`;
       }
     }
@@ -278,7 +555,7 @@ async function init() {
     setText("founder-bio", founder.bio);
     const img = document.getElementById("founder-img");
     if (img) {
-      img.src = founder.image_url;
+      img.src = founderCommon.image_url;
       img.alt = `Portrait of ${founder.name}`;
     }
     renderCredentials(founder.credentials);
@@ -302,14 +579,18 @@ async function init() {
     setText("contact-heading", content.contact_heading);
 
     // ── Interactive
-    initFloatingWa(si.whatsapp_number);
-    initContactForm(si.whatsapp_number);
-    initMap(si.map_embed_url);
+    initFloatingWa(siCommon.whatsapp_number);
+    initContactForm(siCommon.whatsapp_number);
+    initMap(siCommon.map_embed_url);
 
     // Update any wa-link hrefs
     document.querySelectorAll(".wa-link").forEach((el) => {
-      el.href = buildWaLink(si.whatsapp_number);
+      el.href = buildWaLink(siCommon.whatsapp_number);
     });
+
+    // Apply UI translations
+    applyTranslations(currentLanguage);
+    updateMetaTags(currentLanguage);
   } catch (err) {
     console.error("Failed to load data.json:", err);
     // Graceful degradation — static fallback text already in HTML
@@ -318,6 +599,7 @@ async function init() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
+  initLanguageToggle();
   initSmoothScroll();
   init();
 });

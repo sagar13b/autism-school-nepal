@@ -1,20 +1,381 @@
 {
+    "languages": {
+        "en": {"name": "English", "code": "en", "flag": "🇬🇧"},
+        "ne": {"name": "नेपाली", "code": "ne", "flag": "🇳🇵"}
+    },
+    "ui_strings": {
+        "en": {
+            "nav": {
+                "about": "About",
+                "programs": "Programs",
+                "testimonials": "Testimonials",
+                "gallery": "Gallery",
+                "contact": "Contact"
+            },
+            "hero": {
+                "badge": "🇳🇵 Serving Rupandehi with Care • Est. March 2026",
+                "cta_programs": "Explore Programs",
+                "cta_contact": "Contact Us"
+            },
+            "contact": {
+                "form_name_label": "Your Name",
+                "form_name_placeholder": "Full name",
+                "form_topic_label": "Topic",
+                "form_message_label": "Your Message",
+                "form_message_placeholder": "Please describe how we can help…",
+                "form_submit": "Send via WhatsApp",
+                "topic_general": "General Inquiry",
+                "topic_enrollment": "Enrollment Information",
+                "topic_visit": "Schedule a Visit",
+                "topic_therapy": "Therapy Services",
+                "topic_family": "Family Support",
+                "validation_error": "Please fill in your name and message.",
+                "success_message": "Opening WhatsApp… 🎉",
+                "wa_message_template": "Hello, I am *{name}*.\nTopic: {topic}\n\n{message}\n\n_(Sent via Siddhartha Autism Care Center website)_",
+                "wa_float_message": "Hello! I would like to learn more about Siddhartha Autism Care Center programs.",
+                "phone_label": "Phone",
+                "email_label": "Email",
+                "address_label": "Address",
+                "visit_label": "Visit Us"
+            },
+            "footer": {
+                "tagline": "Compassionate Care for Every Child",
+                "copyright": "© 2026 Siddhartha Autism Care Center. All rights reserved.",
+                "quick_links": "Quick Links",
+                "connect": "Connect"
+            }
+        },
+        "ne": {
+            "nav": {
+                "about": "हाम्रो बारेमा",
+                "programs": "कार्यक्रमहरू",
+                "testimonials": "प्रशंसापत्र",
+                "gallery": "फोटो ग्यालरी",
+                "contact": "सम्पर्क"
+            },
+            "hero": {
+                "badge": "🇳🇵 रुपन्देहीमा स्नेहपूर्ण सेवा • स्थापना मार्च २०२६",
+                "cta_programs": "कार्यक्रमहरू हेर्नुहोस्",
+                "cta_contact": "सम्पर्क गर्नुहोस्"
+            },
+            "contact": {
+                "form_name_label": "तपाईंको नाम",
+                "form_name_placeholder": "पूरा नाम",
+                "form_topic_label": "विषय",
+                "form_message_label": "तपाईंको सन्देश",
+                "form_message_placeholder": "कृपया हामीले कसरी मद्दत गर्न सक्छौं वर्णन गर्नुहोस्…",
+                "form_submit": "व्हाट्सएप मार्फत पठाउनुहोस्",
+                "topic_general": "सामान्य जिज्ञासा",
+                "topic_enrollment": "भर्ना जानकारी",
+                "topic_visit": "भ्रमण तय गर्नुहोस्",
+                "topic_therapy": "थेरापी सेवाहरू",
+                "topic_family": "पारिवारिक सहयोग",
+                "validation_error": "कृपया आफ्नो नाम र सन्देश भर्नुहोस्।",
+                "success_message": "व्हाट्सएप खोल्दै… 🎉",
+                "wa_message_template": "नमस्ते, म *{name}* हुँ।\nविषय: {topic}\n\n{message}\n\n_(सिद्धार्थ अटिज्म केयर सेन्टर वेबसाइट मार्फत पठाइएको)_",
+                "wa_float_message": "नमस्ते! म सिद्धार्थ अटिज्म केयर सेन्टरको कार्यक्रमहरूको बारेमा थप जान्न चाहन्छु।",
+                "phone_label": "फोन",
+                "email_label": "इमेल",
+                "address_label": "ठेगाना",
+                "visit_label": "हामीलाई भेट्नुहोस्"
+            },
+            "footer": {
+                "tagline": "प्रत्येक बच्चाको लागि स्नेहपूर्ण हेरचाह",
+                "copyright": "© २०२६ सिद्धार्थ अटिज्म केयर सेन्टर। सर्वाधिकार सुरक्षित।",
+                "quick_links": "द्रुत लिंकहरू",
+                "connect": "जडान"
+            }
+        }
+    },
     "school_info": {
-        "name": "Siddhartha Autism Care Center",
-        "tagline": "Compassionate Care for Every Child",
-        "location": "Tilottama-3, Rupandehi, Nepal",
+        "en": {
+            "name": "Siddhartha Autism Care Center",
+            "tagline": "Compassionate Care for Every Child",
+            "location": "Tilottama-3, Rupandehi, Nepal",
+            "address": "Tilottama-3, Rupandehi, Lumbini Province, Nepal"
+        },
+        "ne": {
+            "name": "सिद्धार्थ अटिज्म केयर सेन्टर",
+            "tagline": "प्रत्येक बच्चाको लागि स्नेहपूर्ण हेरचाह",
+            "location": "तिलोत्तमा-३, रुपन्देही, नेपाल",
+            "address": "तिलोत्तमा-३, रुपन्देही, लुम्बिनी प्रदेश, नेपाल"
+        },
         "logo_url": "assets/logo.jpg",
         "established": "2082/12/08 BS (March 2026 AD)",
         "whatsapp_number": "9779743679080",
         "facebook_page": "https://www.facebook.com/profile.php?id=61559651741049",
         "email": "info@siddharthaautism.org.np",
-        "address": "Tilottama-3, Rupandehi, Lumbini Province, Nepal",
         "map_embed_url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56490.89494584458!2d83.42381737910156!3d27.700092899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996866c03bc2c81%3A0x49a7f2f70e2f3e4f!2sButwal%2032907!5e0!3m2!1sen!2snp!4v1711295000000!5m2!1sen!2snp"
     },
+    "content": {
+        "en": {
+            "hero_title": "Compassionate Care for Children with Autism",
+            "hero_subtitle": "Newly established in March 2026, providing specialized therapy, education, and family support for children on the autism spectrum in Rupandehi, Nepal.",
+            "mission": "To provide comprehensive, compassionate care and evidence-based therapies for children with autism in Nepal, ensuring every child has access to the support they need to reach their full potential.",
+            "about_heading": "Our Story",
+            "about_body": "Siddhartha Autism Care Center was established in March 2026 (2082/12/08 BS) to address the critical need for specialized autism services in the Rupandehi region. As a newly founded center, we are committed to providing individualized therapy programs, educational support, and family counseling to help children with autism develop essential skills and thrive in their communities. Our dedicated team works closely with families to create personalized care plans that celebrate each child's unique strengths.",
+            "programs_heading": "Our Programs",
+            "testimonials_heading": "What Families Say",
+            "gallery_heading": "Our Spaces",
+            "contact_heading": "Get In Touch"
+        },
+        "ne": {
+            "hero_title": "अटिज्म भएका बालबालिकाका लागि स्नेहपूर्ण हेरचाह",
+            "hero_subtitle": "मार्च २०२६ मा नयाँ स्थापित, रुपन्देही, नेपालमा अटिज्म स्पेक्ट्रममा रहेका बालबालिकाहरूको लागि विशेष थेरापी, शिक्षा र पारिवारिक सहयोग प्रदान गर्दै।",
+            "mission": "नेपालमा अटिज्म भएका बालबालिकाहरूका लागि व्यापक, स्नेहपूर्ण हेरचाह र प्रमाण-आधारित थेरापीहरू प्रदान गर्ने, प्रत्येक बच्चाले आफ्नो पूर्ण क्षमतामा पुग्न आवश्यक पर्ने सहयोग प्राप्त गर्न सुनिश्चित गर्ने।",
+            "about_heading": "हाम्रो कथा",
+            "about_body": "सिद्धार्थ अटिज्म केयर सेन्टर मार्च २०२६ (२०८२/१२/०८ बि.सं.) मा रुपन्देही क्षेत्रमा विशेष अटिज्म सेवाहरूको महत्वपूर्ण आवश्यकतालाई सम्बोधन गर्न स्थापित भएको थियो। नयाँ स्थापित केन्द्रको रूपमा, हामी अटिज्म भएका बालबालिकाहरूलाई आवश्यक सीपहरू विकास गर्न र आफ्नो समुदायमा फस्टाउन मद्दत गर्न व्यक्तिगत थेरापी कार्यक्रमहरू, शैक्षिक सहयोग, र पारिवारिक परामर्श प्रदान गर्न प्रतिबद्ध छौं। हाम्रो समर्पित टोलीले प्रत्येक बच्चाको अद्वितीय शक्तिहरूलाई उत्सव मनाउने व्यक्तिगत हेरचाह योजनाहरू सिर्जना गर्न परिवारहरूसँग नजिकबाट काम गर्दछ।",
+            "programs_heading": "हाम्रा कार्यक्रमहरू",
+            "testimonials_heading": "परिवारहरूले के भन्छन्",
+            "gallery_heading": "हाम्रा स्थानहरू",
+            "contact_heading": "सम्पर्कमा रहनुहोस्"
+        }
+    },
+    "programs": {
+        "en": [
+            {
+                "id": "early",
+                "icon": "🌱",
+                "title": "Early Intervention",
+                "age_range": "Ages 2–6",
+                "description": "Intensive, play-based therapy sessions designed to support communication, social skills, and daily routines during the critical developmental window.",
+                "color": "mint"
+            },
+            {
+                "id": "school",
+                "icon": "📚",
+                "title": "School Readiness",
+                "age_range": "Ages 5–10",
+                "description": "Bridging the gap between therapy and mainstream schooling through structured academic readiness, peer interaction, and self-regulation skills.",
+                "color": "sky"
+            },
+            {
+                "id": "life",
+                "icon": "🏡",
+                "title": "Life Skills",
+                "age_range": "Ages 10–18",
+                "description": "Practical independence training covering personal hygiene, community navigation, vocational exploration, and social communication for adolescents.",
+                "color": "lavender"
+            },
+            {
+                "id": "family",
+                "icon": "🤝",
+                "title": "Family Support",
+                "age_range": "All Ages",
+                "description": "Workshops, counseling, and a parent network to equip families with strategies, respite resources, and a community that truly understands.",
+                "color": "peach"
+            }
+        ],
+        "ne": [
+            {
+                "id": "early",
+                "icon": "🌱",
+                "title": "प्रारम्भिक हस्तक्षेप",
+                "age_range": "उमेर २–६",
+                "description": "महत्वपूर्ण विकास अवधिमा संचार, सामाजिक सीप र दैनिक दिनचर्यालाई समर्थन गर्न डिजाइन गरिएको गहन, खेल-आधारित थेरापी सत्रहरू।",
+                "color": "mint"
+            },
+            {
+                "id": "school",
+                "icon": "📚",
+                "title": "विद्यालय तयारी",
+                "age_range": "उमेर ५–१०",
+                "description": "संरचित शैक्षिक तयारी, साथीहरूसँगको अन्तरक्रिया र आत्म-नियमन सीपहरू मार्फत थेरापी र मुख्यधारा स्कूलिङ बीचको खाडललाई पुल गर्ने।",
+                "color": "sky"
+            },
+            {
+                "id": "life",
+                "icon": "🏡",
+                "title": "जीवन सीपहरू",
+                "age_range": "उमेर १०–१८",
+                "description": "किशोरकिशोरीहरूको लागि व्यक्तिगत स्वच्छता, समुदाय नेभिगेशन, व्यावसायिक अन्वेषण र सामाजिक संचार समेट्ने व्यावहारिक स्वतन्त्रता प्रशिक्षण।",
+                "color": "lavender"
+            },
+            {
+                "id": "family",
+                "icon": "🤝",
+                "title": "पारिवारिक सहयोग",
+                "age_range": "सबै उमेर",
+                "description": "परिवारहरूलाई रणनीतिहरू, विश्राम स्रोतहरू र साँच्चै बुझ्ने समुदायसँग सुसज्जित गर्न कार्यशालाहरू, परामर्श र अभिभावक नेटवर्क।",
+                "color": "peach"
+            }
+        ]
+    },
+    "stats": {
+        "en": [
+            {
+                "value": "2026",
+                "label": "Newly Established"
+            },
+            {
+                "value": "4",
+                "label": "Core Programs"
+            },
+            {
+                "value": "Dedicated",
+                "label": "Specialist Team"
+            },
+            {
+                "value": "Modern",
+                "label": "Facilities"
+            }
+        ],
+        "ne": [
+            {
+                "value": "२०२६",
+                "label": "नयाँ स्थापित"
+            },
+            {
+                "value": "४",
+                "label": "मुख्य कार्यक्रमहरू"
+            },
+            {
+                "value": "समर्पित",
+                "label": "विशेषज्ञ टोली"
+            },
+            {
+                "value": "आधुनिक",
+                "label": "सुविधाहरू"
+            }
+        ]
+    },
+    "testimonials": {
+        "en": [
+            {
+                "name": "Early Supporter",
+                "role": "Community Member",
+                "quote": "We are so grateful to have Siddhartha Autism Care Center opening in our community. This specialized support has been greatly needed in Rupandehi, and we look forward to the positive impact it will bring to families.",
+                "avatar": "👩"
+            },
+            {
+                "name": "Local Family",
+                "role": "Parent",
+                "quote": "Finally, there is a dedicated center for autism care in our region. The compassionate approach and professional setup of Siddhartha Autism Care Center gives us hope for our child's future.",
+                "avatar": "👨"
+            },
+            {
+                "name": "Tilottama Resident",
+                "role": "Supporter",
+                "quote": "The establishment of Siddhartha Autism Care Center is a wonderful development for our community. Such specialized services are essential, and we are excited to see this center serve families in need.",
+                "avatar": "👩"
+            }
+        ],
+        "ne": [
+            {
+                "name": "प्रारम्भिक समर्थक",
+                "role": "समुदाय सदस्य",
+                "quote": "हाम्रो समुदायमा सिद्धार्थ अटिज्म केयर सेन्टर खुल्न पाउँदा हामी धेरै कृतज्ञ छौं। यो विशेष सहयोग रुपन्देहीमा धेरै आवश्यक थियो, र हामी परिवारहरूमा यसले ल्याउने सकारात्मक प्रभावको लागि तत्पर छौं।",
+                "avatar": "👩"
+            },
+            {
+                "name": "स्थानीय परिवार",
+                "role": "अभिभावक",
+                "quote": "अन्ततः, हाम्रो क्षेत्रमा अटिज्म केयरको लागि समर्पित केन्द्र छ। सिद्धार्थ अटिज्म केयर सेन्टरको स्नेहपूर्ण दृष्टिकोण र व्यावसायिक सेटअपले हाम्रो बच्चाको भविष्यको लागि आशा दिन्छ।",
+                "avatar": "👨"
+            },
+            {
+                "name": "तिलोत्तमा बासिन्दा",
+                "role": "समर्थक",
+                "quote": "सिद्धार्थ अटिज्म केयर सेन्टरको स्थापना हाम्रो समुदायको लागि एक अद्भुत विकास हो। त्यस्ता विशेष सेवाहरू आवश्यक छन्, र हामी यो केन्द्रले आवश्यकतामा परेका परिवारहरूलाई सेवा गरेको देख्न उत्साहित छौं।",
+                "avatar": "👩"
+            }
+        ]
+    },
+    "gallery": {
+        "en": [
+            {
+                "url": "assets/gallery/classroom-learning.jpg",
+                "alt": "Children engaged in interactive classroom learning activities",
+                "caption": "Interactive Learning Environment"
+            },
+            {
+                "url": "assets/gallery/therapy-session.jpg",
+                "alt": "Professional one-on-one therapy session with child",
+                "caption": "Individualized Therapy Sessions"
+            },
+            {
+                "url": "assets/gallery/children-activity.jpg",
+                "alt": "Children participating in group activities and play",
+                "caption": "Group Activities & Social Skills"
+            },
+            {
+                "url": "assets/gallery/art-therapy.jpg",
+                "alt": "Creative art therapy session with child",
+                "caption": "Creative Arts Therapy"
+            },
+            {
+                "url": "assets/gallery/learning-toys.jpg",
+                "alt": "Educational toys and sensory materials for learning",
+                "caption": "Sensory & Educational Materials"
+            },
+            {
+                "url": "assets/gallery/family-support.jpg",
+                "alt": "Family support and counseling session",
+                "caption": "Family Support & Guidance"
+            }
+        ],
+        "ne": [
+            {
+                "url": "assets/gallery/classroom-learning.jpg",
+                "alt": "अन्तरक्रियात्मक कक्षा शिक्षा गतिविधिहरूमा संलग्न बालबालिकाहरू",
+                "caption": "अन्तरक्रियात्मक सिकाइ वातावरण"
+            },
+            {
+                "url": "assets/gallery/therapy-session.jpg",
+                "alt": "बच्चासँग पेशेवर एक-देखि-एक थेरापी सत्र",
+                "caption": "व्यक्तिगत थेरापी सत्रहरू"
+            },
+            {
+                "url": "assets/gallery/children-activity.jpg",
+                "alt": "समूह गतिविधि र खेलमा भाग लिने बालबालिकाहरू",
+                "caption": "समूह गतिविधिहरू र सामाजिक सीपहरू"
+            },
+            {
+                "url": "assets/gallery/art-therapy.jpg",
+                "alt": "बच्चासँग रचनात्मक कला थेरापी सत्र",
+                "caption": "रचनात्मक कला थेरापी"
+            },
+            {
+                "url": "assets/gallery/learning-toys.jpg",
+                "alt": "शिक्षाका लागि शैक्षिक खेलौना र संवेदी सामग्रीहरू",
+                "caption": "संवेदी र शैक्षिक सामग्रीहरू"
+            },
+            {
+                "url": "assets/gallery/family-support.jpg",
+                "alt": "पारिवारिक सहयोग र परामर्श सत्र",
+                "caption": "पारिवारिक सहयोग र मार्गदर्शन"
+            }
+        ]
+    },
     "founder": {
-        "name": "Narayani Kunwar Adhikari",
-        "title": "Founder & Director",
-        "bio": "Narayani Kunwar Adhikari is a dedicated special education professional pursuing a Masters in Inclusive & Special Education at Kathmandu University. With extensive experience working with children with autism and special needs in Nepal, she has served in various capacities including as a part-time Therapist at the deafblind resource class in Rupandehi (2021-2023), an autism teacher and head of the sensory department at SERC (2013-2016), a Rehabilitation Therapist at Butwal Autism Care Society (2023-2025), and most recently as a Communication Facilitator at Autism Care Center Rupandehi (2025-2026). In March 2026, she founded Siddhartha Autism Care Center to continue her mission of providing specialized, compassionate support to children on the autism spectrum and their families.",
+        "en": {
+            "name": "Narayani Kunwar Adhikari",
+            "title": "Founder & Director",
+            "bio": "Narayani Kunwar Adhikari is a dedicated special education professional pursuing a Masters in Inclusive & Special Education at Kathmandu University. With extensive experience working with children with autism and special needs in Nepal, she has served in various capacities including as a part-time Therapist at the deafblind resource class in Rupandehi (2021-2023), an autism teacher and head of the sensory department at SERC (2013-2016), a Rehabilitation Therapist at Butwal Autism Care Society (2023-2025), and most recently as a Communication Facilitator at Autism Care Center Rupandehi (2025-2026). In March 2026, she founded Siddhartha Autism Care Center to continue her mission of providing specialized, compassionate support to children on the autism spectrum and their families.",
+            "credentials": [
+                "Masters in Inclusive & Special Education - Kathmandu University (Pursuing)",
+                "Founder, Siddhartha Autism Care Center (2026)",
+                "Former Communication Facilitator - Autism Care Center Rupandehi",
+                "Former Rehabilitation Therapist - Butwal Autism Care Society",
+                "Former Deafblind Therapist - Nepal Association of the Blind",
+                "Experienced Autism Teacher & Sensory Department Head",
+                "Special Education Advocate"
+            ]
+        },
+        "ne": {
+            "name": "नारायणी कुँवर अधिकारी",
+            "title": "संस्थापक र निर्देशक",
+            "bio": "नारायणी कुँवर अधिकारी काठमाडौं विश्वविद्यालयमा समावेशी र विशेष शिक्षामा स्नातकोत्तर गरिरहेकी एक समर्पित विशेष शिक्षा पेशेवर हुन्। नेपालमा अटिज्म र विशेष आवश्यकता भएका बालबालिकाहरूसँग काम गर्ने व्यापक अनुभवको साथ, उनले रुपन्देहीको बहिरो-अन्धो स्रोत कक्षामा अंशकालिक थेरापिस्ट (२०२१-२०२३), SERC मा अटिज्म शिक्षक र संवेदी विभागको प्रमुख (२०१३-२०१६), बुटवल अटिज्म केयर सोसाइटीमा पुनर्स्थापना थेरापिस्ट (२०२३-२०२५), र हालसालै अटिज्म केयर सेन्टर रुपन्देहीमा संचार सहजकर्ता (२०२५-२०२६) को रूपमा विभिन्न क्षमतामा सेवा गरेकी छिन्। मार्च २०२६ मा, उनले अटिज्म स्पेक्ट्रममा रहेका बालबालिकाहरू र तिनीहरूका परिवारहरूलाई विशेष, स्नेहपूर्ण सहयोग प्रदान गर्ने आफ्नो मिशन जारी राख्न सिद्धार्थ अटिज्म केयर सेन्टर स्थापना गरिन्।",
+            "credentials": [
+                "समावेशी र विशेष शिक्षामा स्नातकोत्तर - काठमाडौं विश्वविद्यालय (अध्ययनरत)",
+                "संस्थापक, सिद्धार्थ अटिज्म केयर सेन्टर (२०२६)",
+                "पूर्व संचार सहजकर्ता - अटिज्म केयर सेन्टर रुपन्देही",
+                "पूर्व पुनर्स्थापना थेरापिस्ट - बुटवल अटिज्म केयर सोसाइटी",
+                "पूर्व बहिरो-अन्धो थेरापिस्ट - नेपाल एसोसिएशन अफ द ब्लाइन्ड",
+                "अनुभवी अटिज्म शिक्षक र संवेदी विभाग प्रमुख",
+                "विशेष शिक्षा अधिवक्ता"
+            ]
+        },
         "image_url": "assets/founder.jpg",
         "work_experience": [
             {
@@ -48,15 +409,6 @@
                 "location": "Nepal"
             }
         ],
-        "credentials": [
-            "Masters in Inclusive & Special Education - Kathmandu University (Pursuing)",
-            "Founder, Siddhartha Autism Care Center (2026)",
-            "Former Communication Facilitator - Autism Care Center Rupandehi",
-            "Former Rehabilitation Therapist - Butwal Autism Care Society",
-            "Former Deafblind Therapist - Nepal Association of the Blind",
-            "Experienced Autism Teacher & Sensory Department Head",
-            "Special Education Advocate"
-        ],
         "education": [
             {
                 "degree": "Masters in Inclusive & Special Education",
@@ -80,120 +432,5 @@
             "father_name": "Parashwor Kunwar",
             "permanent_address": "Sandhikharka-10, Arghakhanchi District, Nepal"
         }
-    },
-    "content": {
-        "hero_title": "Compassionate Care for Children with Autism",
-        "hero_subtitle": "Newly established in March 2026, providing specialized therapy, education, and family support for children on the autism spectrum in Rupandehi, Nepal.",
-        "mission": "To provide comprehensive, compassionate care and evidence-based therapies for children with autism in Nepal, ensuring every child has access to the support they need to reach their full potential.",
-        "about_heading": "Our Story",
-        "about_body": "Siddhartha Autism Care Center was established in March 2026 (2082/12/08 BS) to address the critical need for specialized autism services in the Rupandehi region. As a newly founded center, we are committed to providing individualized therapy programs, educational support, and family counseling to help children with autism develop essential skills and thrive in their communities. Our dedicated team works closely with families to create personalized care plans that celebrate each child's unique strengths.",
-        "programs_heading": "Our Programs",
-        "testimonials_heading": "What Families Say",
-        "gallery_heading": "Our Spaces",
-        "contact_heading": "Get In Touch"
-    },
-    "programs": [
-        {
-            "id": "early",
-            "icon": "🌱",
-            "title": "Early Intervention",
-            "age_range": "Ages 2–6",
-            "description": "Intensive, play-based therapy sessions designed to support communication, social skills, and daily routines during the critical developmental window.",
-            "color": "mint"
-        },
-        {
-            "id": "school",
-            "icon": "📚",
-            "title": "School Readiness",
-            "age_range": "Ages 5–10",
-            "description": "Bridging the gap between therapy and mainstream schooling through structured academic readiness, peer interaction, and self-regulation skills.",
-            "color": "sky"
-        },
-        {
-            "id": "life",
-            "icon": "🏡",
-            "title": "Life Skills",
-            "age_range": "Ages 10–18",
-            "description": "Practical independence training covering personal hygiene, community navigation, vocational exploration, and social communication for adolescents.",
-            "color": "lavender"
-        },
-        {
-            "id": "family",
-            "icon": "🤝",
-            "title": "Family Support",
-            "age_range": "All Ages",
-            "description": "Workshops, counseling, and a parent network to equip families with strategies, respite resources, and a community that truly understands.",
-            "color": "peach"
-        }
-    ],
-    "stats": [
-        {
-            "value": "2026",
-            "label": "Newly Established"
-        },
-        {
-            "value": "4",
-            "label": "Core Programs"
-        },
-        {
-            "value": "Dedicated",
-            "label": "Specialist Team"
-        },
-        {
-            "value": "Modern",
-            "label": "Facilities"
-        }
-    ],
-    "testimonials": [
-        {
-            "name": "Early Supporter",
-            "role": "Community Member",
-            "quote": "We are so grateful to have Siddhartha Autism Care Center opening in our community. This specialized support has been greatly needed in Rupandehi, and we look forward to the positive impact it will bring to families.",
-            "avatar": "👩"
-        },
-        {
-            "name": "Local Family",
-            "role": "Parent",
-            "quote": "Finally, there is a dedicated center for autism care in our region. The compassionate approach and professional setup of Siddhartha Autism Care Center gives us hope for our child's future.",
-            "avatar": "👨"
-        },
-        {
-            "name": "Tilottama Resident",
-            "role": "Supporter",
-            "quote": "The establishment of Siddhartha Autism Care Center is a wonderful development for our community. Such specialized services are essential, and we are excited to see this center serve families in need.",
-            "avatar": "👩"
-        }
-    ],
-    "gallery": [
-        {
-            "url": "assets/gallery/classroom-learning.jpg",
-            "alt": "Children engaged in interactive classroom learning activities",
-            "caption": "Interactive Learning Environment"
-        },
-        {
-            "url": "assets/gallery/therapy-session.jpg",
-            "alt": "Professional one-on-one therapy session with child",
-            "caption": "Individualized Therapy Sessions"
-        },
-        {
-            "url": "assets/gallery/children-activity.jpg",
-            "alt": "Children participating in group activities and play",
-            "caption": "Group Activities & Social Skills"
-        },
-        {
-            "url": "assets/gallery/art-therapy.jpg",
-            "alt": "Creative art therapy session with child",
-            "caption": "Creative Arts Therapy"
-        },
-        {
-            "url": "assets/gallery/learning-toys.jpg",
-            "alt": "Educational toys and sensory materials for learning",
-            "caption": "Sensory & Educational Materials"
-        },
-        {
-            "url": "assets/gallery/family-support.jpg",
-            "alt": "Family support and counseling session",
-            "caption": "Family Support & Guidance"
-        }
-    ]
+    }
 }
